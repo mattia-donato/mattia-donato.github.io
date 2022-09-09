@@ -43,13 +43,6 @@ jobs:
 #         path: docs2/_build/latex/pdfexample.pdf
     # Publish built docs to gh-pages branch.
     # ===============================
-    
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: gh-pages
-        directory: gh-pages
-        github_token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Commit documentation changes
       run: |
@@ -65,3 +58,10 @@ jobs:
         # that.
 
     # ===============================
+    
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: gh-pages
+        directory: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}

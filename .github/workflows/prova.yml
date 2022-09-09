@@ -46,6 +46,7 @@ jobs:
         
     - name: Commit documentation changes
       run: |
+        ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
         git clone https://github.com/mattia-donato/mattia-donato.github.io.git --branch gh-pages --single-branch gh-pages
         cp -r docs/_build/html/* gh-pages/
         cd gh-pages

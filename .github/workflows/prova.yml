@@ -35,7 +35,7 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: DocumentationHTML
-        path: docs/_build/html/
+        path: docs/_build/
 #     # Create an artifact out of the previously built pdf.
 #     - uses: actions/upload-artifact@v1
 #       with:

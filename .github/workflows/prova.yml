@@ -71,12 +71,12 @@ jobs:
 
     # ===============================
     
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: main
-        directory: prova
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+#     - name: Push changes
+#       uses: ad-m/github-push-action@master
+#       with:
+#         branch: main
+#         directory: prova
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
 
 #   deploy:
 #     environment:

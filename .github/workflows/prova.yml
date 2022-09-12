@@ -67,16 +67,16 @@ jobs:
         git commit -m "Update documentation" -a || true
         # The above command will fail if no changes were present, so we ignore
         # that.
-        ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'        
+        ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 
     # ===============================
     
-#     - name: Push changes
-#       uses: ad-m/github-push-action@master
-#       with:
-#         branch: main
-#         directory: prova
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: main
+        directory: prova
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
 #   deploy:
 #     environment:

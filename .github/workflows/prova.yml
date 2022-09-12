@@ -58,7 +58,7 @@ jobs:
       run: |
         git clone https://github.com/mattia-donato/mattia-donato.github.io.git
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'        
-        cp -r docs/_build/* prova/
+        cp -r docs/_build/* mattia-donato.github.io/prova/
         cd prova
         touch .nojekyll
         git config --local user.email "action@github.com"

@@ -74,10 +74,8 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        branch: main
-        directory: prova
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              branch: ${{ github.ref }}
 #   deploy:
 #     environment:
 #       name: github-pages

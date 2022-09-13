@@ -89,7 +89,7 @@ jobs:
           git pull origin master
         )
         
-        git_sparse_clone "https://github.com/VicidominiLab/BrightEyes-TTM.git" "./BrightEyes-TTM-docs" "/docs"
+        git_sparse_clone "https://github.com/VicidominiLab/BrightEyes-TTM.git@v2.0" "./BrightEyes-TTM-docs" "/docs"
         
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 

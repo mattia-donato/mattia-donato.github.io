@@ -45,7 +45,7 @@ jobs:
         
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
         
-    - uses: actions/checkout@v1
+#     - uses: actions/checkout@v1
     # Standard drop-in approach that should work for most people.
     - uses: ammaraskar/sphinx-action@master
       with:

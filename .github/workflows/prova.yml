@@ -49,15 +49,16 @@ jobs:
     # Standard drop-in approach that should work for most people.
     - uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+        pre-build-command: |
+                           ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+                           pip install myst-parser[linkify]
         docs-folder: "mattia-donato.github.io/BrightEyes-TTM/docs/source"
         build-command: "sphinx-build -b html . _build"
 
     - uses: actions/upload-artifact@v1
       with:
         name: DocumentationHTML bis
-        pre-build-command: |
-                           pip install myst-parser[linkify]
+
         path: mattia-donato.github.io/BrightEyes-TTM/docs/_build/
     
     - name: Push changes

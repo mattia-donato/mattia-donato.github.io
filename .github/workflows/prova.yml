@@ -69,30 +69,33 @@ jobs:
         # that.
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
         
-        
-        function git_sparse_clone() (
-          rurl="$1" localdir="$2" && shift 2
-
-          mkdir -p "$localdir"
-          cd "$localdir"
-
-          git init
-          git remote add -f origin "$rurl"
-
-          git config core.sparseCheckout true
-
-          # Loops over remaining args
-          for i; do
-            echo "$i" >> .git/info/sparse-checkout
-          done
-
-          git pull origin master
-        )
-        
-        git_sparse_clone "https://github.com/VicidominiLab/BrightEyes-TTM.git@v2.0" "./BrightEyes-TTM-docs" "/docs"
+        git clone "https://github.com/VicidominiLab/BrightEyes-TTM.git" BrightEyes-TTM
         
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
-
+        
+    - uses: actions/checkout@v1
+    # Standard drop-in approach that should work for most people.
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "BrightEyes-TTM/docs/"
+        build-command: "sphinx-build -b html . _build"
+#     # Example of using a custom build-command.
+#     - uses: ammaraskar/sphinx-action@master
+#       with:
+#         build-command: "sphinx-build -b html . _build"
+#         docs-folder: "docs2/"
+    # Grabbing custom dependencies and building as a pdf.
+#     - uses: ammaraskar/sphinx-action@master
+#       with:
+#         pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+#         build-command: "make latexpdf"
+#         docs-folder: "docs/"
+    # Great extra actions to compose with:
+    # Create an artifact of the html output.
+    - uses: actions/upload-artifact@v1
+      with:
+        name: DocumentationHTML
+        path: BrightEyes-TTM/docs/_build/
         
     # ===============================
     

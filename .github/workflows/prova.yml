@@ -1,21 +1,12 @@
 name: Prova
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+
   push:
     branches: [ "main" ]
     
   pull_request:
     branches: [ "main" ]
-    
-# permissions:
-#   contents: read
-#   pages: write
-#   id-token: write
-
-# concurrency:
-#   group: "pages"
-#   cancel-in-progress: true
 
 jobs:
   build:
@@ -29,31 +20,12 @@ jobs:
       with:
         docs-folder: "docs/"
         build-command: "sphinx-build -b html . _build"
-#     # Example of using a custom build-command.
-#     - uses: ammaraskar/sphinx-action@master
-#       with:
-#         build-command: "sphinx-build -b html . _build"
-#         docs-folder: "docs2/"
-    # Grabbing custom dependencies and building as a pdf.
-#     - uses: ammaraskar/sphinx-action@master
-#       with:
-#         pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
-#         build-command: "make latexpdf"
-#         docs-folder: "docs/"
-    # Great extra actions to compose with:
-    # Create an artifact of the html output.
+
     - uses: actions/upload-artifact@v1
       with:
         name: DocumentationHTML
         path: docs/_build/
-#     # Create an artifact out of the previously built pdf.
-#     - uses: actions/upload-artifact@v1
-#       with:
-#         name: Documentation
-#         path: docs2/_build/latex/pdfexample.pdf
-    # Publish built docs to gh-pages branch.
-    # ===============================
-        
+
     - name: Commit documentation changes
       run: |
         git clone https://github.com/mattia-donato/mattia-donato.github.io.git
@@ -79,75 +51,125 @@ jobs:
       with:
         docs-folder: "BrightEyes-TTM/docs/"
         build-command: "sphinx-build -b html . _build"
-#     # Example of using a custom build-command.
-#     - uses: ammaraskar/sphinx-action@master
-#       with:
-#         build-command: "sphinx-build -b html . _build"
-#         docs-folder: "docs2/"
-    # Grabbing custom dependencies and building as a pdf.
-#     - uses: ammaraskar/sphinx-action@master
-#       with:
-#         pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
-#         build-command: "make latexpdf"
-#         docs-folder: "docs/"
-    # Great extra actions to compose with:
-    # Create an artifact of the html output.
+
     - uses: actions/upload-artifact@v1
       with:
-        name: DocumentationHTML
+        name: DocumentationHTML bis
         path: BrightEyes-TTM/docs/_build/
-        
-    # ===============================
     
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
               branch: ${{ github.ref }}
-#   deploy:
-#     environment:
-#       name: github-pages
-#       url: ${{ steps.deployment.outputs.page_url }}
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-#       - name: Setup Pages
-#         uses: actions/configure-pages@v2
-#       - name: Upload artifact
-#         uses: actions/upload-pages-artifact@v1
-#         with:
-#           # Upload entire repository
-#           path: '.'
-#       - name: Deploy to GitHub Pages
-#         id: deployment
-#         uses: actions/deploy-pages@v1
 
 
-# # # # Simple workflow for deploying static content to GitHub Pages
-# # # name: Deploy static content to Pages
+# name: Prova
 
-# # # on:
-# # #   # Runs on pushes targeting the default branch
-# # #   push:
-# # #     branches: ["main"]
+# on:
+#   # Triggers the workflow on push or pull request events but only for the "main" branch
+#   push:
+#     branches: [ "main" ]
+    
+#   pull_request:
+#     branches: [ "main" ]
+    
+# # permissions:
+# #   contents: read
+# #   pages: write
+# #   id-token: write
 
-# # #   # Allows you to run this workflow manually from the Actions tab
-# # #   workflow_dispatch:
-
-# # # # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-# # # permissions:
-# # #   contents: read
-# # #   pages: write
-# # #   id-token: write
-
-# # # Allow one concurrent deployment
 # # concurrency:
 # #   group: "pages"
 # #   cancel-in-progress: true
 
-# # jobs:
-# #   # Single deploy job since we're just deploying
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - uses: actions/checkout@v1
+#     # Standard drop-in approach that should work for most people.
+#     - uses: ammaraskar/sphinx-action@master
+#       with:
+#         docs-folder: "docs/"
+#         build-command: "sphinx-build -b html . _build"
+# #     # Example of using a custom build-command.
+# #     - uses: ammaraskar/sphinx-action@master
+# #       with:
+# #         build-command: "sphinx-build -b html . _build"
+# #         docs-folder: "docs2/"
+#     # Grabbing custom dependencies and building as a pdf.
+# #     - uses: ammaraskar/sphinx-action@master
+# #       with:
+# #         pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+# #         build-command: "make latexpdf"
+# #         docs-folder: "docs/"
+#     # Great extra actions to compose with:
+#     # Create an artifact of the html output.
+#     - uses: actions/upload-artifact@v1
+#       with:
+#         name: DocumentationHTML
+#         path: docs/_build/
+# #     # Create an artifact out of the previously built pdf.
+# #     - uses: actions/upload-artifact@v1
+# #       with:
+# #         name: Documentation
+# #         path: docs2/_build/latex/pdfexample.pdf
+#     # Publish built docs to gh-pages branch.
+#     # ===============================
+        
+#     - name: Commit documentation changes
+#       run: |
+#         git clone https://github.com/mattia-donato/mattia-donato.github.io.git
+#         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'        
+#         cp -r docs/_build/* mattia-donato.github.io/prova/
+#         cd mattia-donato.github.io
+#         touch .nojekyll
+#         git config --local user.email "action@github.com"
+#         git config --local user.name "GitHub Action"
+#         git add . -v
+#         git commit -m "Update documentation" -a || true
+#         # The above command will fail if no changes were present, so we ignore
+#         # that.
+#         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+        
+#         git clone "https://github.com/VicidominiLab/BrightEyes-TTM.git" BrightEyes-TTM
+        
+#         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+        
+#     - uses: actions/checkout@v1
+#     # Standard drop-in approach that should work for most people.
+#     - uses: ammaraskar/sphinx-action@master
+#       with:
+#         docs-folder: "BrightEyes-TTM/docs/"
+#         build-command: "sphinx-build -b html . _build"
+# #     # Example of using a custom build-command.
+# #     - uses: ammaraskar/sphinx-action@master
+# #       with:
+# #         build-command: "sphinx-build -b html . _build"
+# #         docs-folder: "docs2/"
+#     # Grabbing custom dependencies and building as a pdf.
+# #     - uses: ammaraskar/sphinx-action@master
+# #       with:
+# #         pre-build-command: "apt-get update -y && apt-get install -y latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended"
+# #         build-command: "make latexpdf"
+# #         docs-folder: "docs/"
+#     # Great extra actions to compose with:
+#     # Create an artifact of the html output.
+#     - uses: actions/upload-artifact@v1
+#       with:
+#         name: DocumentationHTML
+#         path: BrightEyes-TTM/docs/_build/
+        
+#     # ===============================
+    
+#     - name: Push changes
+#       uses: ad-m/github-push-action@master
+#       with:
+#               github_token: ${{ secrets.GITHUB_TOKEN }}
+#               branch: ${{ github.ref }}
 # #   deploy:
 # #     environment:
 # #       name: github-pages
@@ -166,3 +188,47 @@ jobs:
 # #       - name: Deploy to GitHub Pages
 # #         id: deployment
 # #         uses: actions/deploy-pages@v1
+
+
+# # # # # Simple workflow for deploying static content to GitHub Pages
+# # # # name: Deploy static content to Pages
+
+# # # # on:
+# # # #   # Runs on pushes targeting the default branch
+# # # #   push:
+# # # #     branches: ["main"]
+
+# # # #   # Allows you to run this workflow manually from the Actions tab
+# # # #   workflow_dispatch:
+
+# # # # # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# # # # permissions:
+# # # #   contents: read
+# # # #   pages: write
+# # # #   id-token: write
+
+# # # # Allow one concurrent deployment
+# # # concurrency:
+# # #   group: "pages"
+# # #   cancel-in-progress: true
+
+# # # jobs:
+# # #   # Single deploy job since we're just deploying
+# # #   deploy:
+# # #     environment:
+# # #       name: github-pages
+# # #       url: ${{ steps.deployment.outputs.page_url }}
+# # #     runs-on: ubuntu-latest
+# # #     steps:
+# # #       - name: Checkout
+# # #         uses: actions/checkout@v3
+# # #       - name: Setup Pages
+# # #         uses: actions/configure-pages@v2
+# # #       - name: Upload artifact
+# # #         uses: actions/upload-pages-artifact@v1
+# # #         with:
+# # #           # Upload entire repository
+# # #           path: '.'
+# # #       - name: Deploy to GitHub Pages
+# # #         id: deployment
+# # #         uses: actions/deploy-pages@v1

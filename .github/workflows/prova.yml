@@ -69,6 +69,8 @@ jobs:
       run: |
            find  -type d      
            cd mattia-donato.github.io/BrightEyes-TTM/docs/source
+           git config --local user.email "action@github.com"
+           git config --local user.name "GitHub Action"           
            git add . -v
            git commit -m "Update documentation" -a || true
            cd

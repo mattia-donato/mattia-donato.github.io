@@ -54,6 +54,7 @@ jobs:
            git add web/ -v
            echo git commit -m "Update documentation"
            git commit -m "Update documentation" -a || true
+           git push
 
 # #     - uses: actions/upload-artifact@v1
 # #       with:

@@ -46,14 +46,15 @@ jobs:
            cp -Rv tmp/source/_build/* ./currentRepo/web/
            echo touch .nojekyll
            touch .nojekyll
-           echo find . -type d
-           find . -type d        
-           echo git add -v currentRepo/web/
-           git add -v currentRepo/web/
-           echo git commit -m "Update documentation" -a || true       
+           echo git config
+           git config --local user.email "action@github.com"
+           git config --local user.name "GitHub Action"           
+           echo cd currentRepo/web/
+           cd currentRepo/web/
+           echo git add . -v
+           git add . -v
+           echo git commit -m "Update documentation"
            git commit -m "Update documentation" -a || true
-           echo git push
-           git push
 
 # #     - uses: actions/upload-artifact@v1
 # #       with:

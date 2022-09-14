@@ -40,6 +40,7 @@ jobs:
         
     - name: tree      
       run: |
+           set -o xtrace
            mkdir ./currentRepo/web
            cp -Rv tmp/source/_build/* ./currentRepo/web/
            touch .nojekyll

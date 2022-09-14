@@ -58,7 +58,7 @@ jobs:
 
     - name: Check situation
       run: |
-           ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+           find  -type d
            
     - uses: actions/upload-artifact@v1
       with:

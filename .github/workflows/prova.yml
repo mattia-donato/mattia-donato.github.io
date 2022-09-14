@@ -26,9 +26,7 @@ jobs:
       run: |
            find . -type d
            git clone "https://github.com/VicidominiLab/BrightEyes-TTM.git" BrightEyes-TTM
-           
-           mkdir tmp
-           mkdir tmp/source           
+           mkdir -p tmp/source           
            cp -vR BrightEyes-TTM/docs/source/* tmp/source
     
     - uses: ammaraskar/sphinx-action@master
@@ -40,8 +38,8 @@ jobs:
         
     - name: tree      
       run: |
-           echo mkdir ./currentRepo/web
-           mkdir ./currentRepo/web
+           echo mkdir -p ./currentRepo/web
+           mkdir -p ./currentRepo/web
            echo cp -Rv tmp/source/_build/* ./currentRepo/web/
            cp -Rv tmp/source/_build/* ./currentRepo/web/
            echo touch .nojekyll

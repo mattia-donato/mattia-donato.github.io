@@ -72,7 +72,7 @@ jobs:
            cd mattia-donato.github.io/BrightEyes-TTM/docs/source
            git config --local user.email "action@github.com"
            git config --local user.name "GitHub Action"           
-           cp -R ./mattia-donato.github.io/BrightEyes-TTM/docs/source/* ./docs/
+           cp -R ./mattia-donato.github.io/BrightEyes-TTM/docs/source/_build/* ./docs/
            cd ./docs/
            git add . -v
            git commit -m "Update documentation" -a || true

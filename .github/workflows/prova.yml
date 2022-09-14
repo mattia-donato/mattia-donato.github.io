@@ -65,6 +65,13 @@ jobs:
         name: DocumentationHTML bis
         path: mattia-donato.github.io/BrightEyes-TTM/docs/source/_build/
     
+    - name: Commit documentation changes
+      run: |
+        cd mattia-donato.github.io/docs/source/_build/
+        git add . -v
+        git commit -m "Update documentation" -a || true
+        cd ~
+        find  -type d
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

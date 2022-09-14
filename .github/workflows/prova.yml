@@ -28,6 +28,7 @@ jobs:
 
     - name: Commit documentation changes
       run: |
+        pwd
         git clone https://github.com/mattia-donato/mattia-donato.github.io.git
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'        
         cp -rv docs/_build/* mattia-donato.github.io/prova/
@@ -68,6 +69,7 @@ jobs:
     
     - name: Commit documentation changes
       run: |
+           pwd
            find / -type d      
            cd mattia-donato.github.io/BrightEyes-TTM/docs/source
            git config --local user.email "action@github.com"

@@ -68,7 +68,7 @@ jobs:
     - name: Commit documentation changes
       run: |
            find  -type d      
-           cd mattia-donato.github.io/docs/source/_build/
+           cd mattia-donato.github.io/BrightEyes-TTM/docs/source
            git add . -v
            git commit -m "Update documentation" -a || true
            cd

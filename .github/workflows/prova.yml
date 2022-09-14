@@ -40,8 +40,11 @@ jobs:
         
     - name: tree      
       run: |
+           cp -Rv tmp/source/_build/* ./currentRepo/web/
            touch .nojekyll
-           find . -type d      
+           find . -type d
+           git add -v ./currentRepo/web/
+           git push
 
 # #     - uses: actions/upload-artifact@v1
 # #       with:

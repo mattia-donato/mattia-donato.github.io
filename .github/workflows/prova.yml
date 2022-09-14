@@ -67,11 +67,12 @@ jobs:
     
     - name: Commit documentation changes
       run: |
-        cd mattia-donato.github.io/docs/source/_build/
-        git add . -v
-        git commit -m "Update documentation" -a || true
-        cd
-        find  -type d
+           find  -type d      
+           cd mattia-donato.github.io/docs/source/_build/
+           git add . -v
+           git commit -m "Update documentation" -a || true
+           cd
+           find  -type d
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

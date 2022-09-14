@@ -68,7 +68,7 @@ jobs:
     
     - name: Commit documentation changes
       run: |
-           find ./ -type d      
+           find / -type d      
            cd mattia-donato.github.io/BrightEyes-TTM/docs/source
            git config --local user.email "action@github.com"
            git config --local user.name "GitHub Action"           

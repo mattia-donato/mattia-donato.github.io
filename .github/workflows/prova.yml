@@ -54,13 +54,14 @@ jobs:
                            pip install myst-parser[linkify] sphinx-rtd-theme
 
         docs-folder: "mattia-donato.github.io/BrightEyes-TTM/docs/source"
+        post-build-command: |
+                            ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
         build-command: "sphinx-build -b html . _build"
 
     - uses: actions/upload-artifact@v1
       with:
         name: DocumentationHTML bis
-
-        path: mattia-donato.github.io/BrightEyes-TTM/docs/_build/
+        path: BrightEyes-TTM/docs/_build/
     
     - name: Push changes
       uses: ad-m/github-push-action@master

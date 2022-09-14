@@ -19,15 +19,27 @@ jobs:
            find . -type d
     - name: Initial Situation           
       uses: actions/checkout@v3
+      with:
+           path: 'currentRepo'
+           
     - name: tree      
       run: |
            find . -type d
+           mkdir tmp
+           mkdir tmp/source
+           cp -vR BrightEyes-TTM/docs/source/* tmp/source
     
-#     # Standard drop-in approach that should work for most people.
-# #     - uses: ammaraskar/sphinx-action@master
-# #       with:
-# #         docs-folder: "docs/"
-# #         build-command: "sphinx-build -b html . _build"
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        pre-build-command: |
+                           pip install myst-parser[linkify] sphinx-rtd-theme
+        docs-folder: "$GITHUB_WORKSPACE/docs/source"
+        build-command: "sphinx-build -b html . _build"
+        
+    - name: tree      
+      run: |
+           touch .nojekyll
+           find . -type d      
 
 # #     - uses: actions/upload-artifact@v1
 # #       with:

@@ -30,7 +30,7 @@ jobs:
       run: |
         git clone https://github.com/mattia-donato/mattia-donato.github.io.git
         ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'        
-        cp -r docs/_build/* mattia-donato.github.io/prova/
+        cp -rv docs/_build/* mattia-donato.github.io/prova/
         cd mattia-donato.github.io
         touch .nojekyll
         git config --local user.email "action@github.com"
@@ -58,6 +58,7 @@ jobs:
 
     - name: Check situation
       run: |
+           cp -rv mattia-donato.github.io/BrightEyes-TTM/docs/source/_build/* mattia-donato.github.io/prova/
            find  -type d
            
     - uses: actions/upload-artifact@v1

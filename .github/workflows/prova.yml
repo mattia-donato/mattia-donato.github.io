@@ -47,12 +47,11 @@ jobs:
            echo touch .nojekyll
            touch .nojekyll
            echo git config
+           cd currentRepo
            git config --local user.email "action@github.com"
            git config --local user.name "GitHub Action"           
-           echo cd currentRepo/web/
-           cd currentRepo/web/
-           echo git add . -v
-           git add . -v
+           echo git add web/ -v
+           git add web/ -v
            echo git commit -m "Update documentation"
            git commit -m "Update documentation" -a || true
 

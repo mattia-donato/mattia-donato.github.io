@@ -40,6 +40,7 @@ jobs:
         
     - name: tree      
       run: |
+           mkdir ./currentRepo/web
            cp -Rv tmp/source/_build/* ./currentRepo/web/
            touch .nojekyll
            find . -type d

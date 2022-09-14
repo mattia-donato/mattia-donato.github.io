@@ -9,13 +9,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-  
-    # Add "id-token" with the intended permissions.
-    permissions:
-      contents: 'write'
-      id-token: 'write'
-
+  build:     
     runs-on: ubuntu-latest
 
     steps:
@@ -60,6 +54,11 @@ jobs:
            git push
            
   deploy:
+    # Add "id-token" with the intended permissions.
+    permissions:
+      contents: 'write'
+      id-token: 'write'
+  
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

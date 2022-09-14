@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPAD7x7-to-FMC board &mdash; BrightEyes-TTM 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MPD NIM 2 TTL" href="NIM2TTL.html" />
+    <link rel="prev" title="SMA/SMB-to-FMC board" href="pinout5x5.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BrightEyes-TTM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BrightEyes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="hardware.html">Hardware</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="FPGABoard.html">BrightEyes-TTM Mainboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FMCAdapter.html">FMC-to-USB Adapter</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="IOConnectorBoard.html">I/Os adapters &amp; Pinout</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pinout5x5.html">SMA/SMB-to-FMC board</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SPAD7x7-to-FMC board</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pinout-i-os-7x7spad-to-fmc-board">Pinout I/Os 7x7SPAD-to-FMC board</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="IOConnectorBoard.html#pinout-synchronization">Pinout synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#optional-hardware-parts">Optional hardware parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#how-to-assemble-setup-the-harware">How to assemble / setup the harware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#pc-requirements">PC requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datareceiver.html">Data Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataprocessing.html">Data processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">FPGA architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#contact-us">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#references">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrightEyes-TTM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="hardware.html">Hardware</a> &raquo;</li>
+          <li><a href="IOConnectorBoard.html">I/Os adapters &amp; Pinout</a> &raquo;</li>
+      <li>SPAD7x7-to-FMC board</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/pinout7x7.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="spad7x7-to-fmc-board">
+<h1>SPAD7x7-to-FMC board<a class="headerlink" href="#spad7x7-to-fmc-board" title="Permalink to this heading"></a></h1>
+<p>FMC daugther card to interface the BrightEyes-TTM with external photon-signals from a commercial 7x7 SPAD (49 channels) detector. The input signals of this board are differential LVDS signals.</p>
+<ul class="simple">
+<li><p><em>Brand:</em> <em>custom-built</em></p></li>
+<li><p><em>Product code:</em> <em>custom-built</em></p></li>
+<li><p>BOM and docs: <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/boards/TTM7x7Adapter/docs">7x7SPAD_FMC</a></p></li>
+<li><p><strong>Gerber File:</strong> <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/raw/v2.0/boards/TTM7x7Adapter/TTM7x7Adapter_gerber.zip">Gerber_7x7SPAD_FMC.zip</a></p></li>
+</ul>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/3DViewF.png"><img alt="_images/3DViewF.png" src="_images/3DViewF.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Fig.1 - I/Os 7x7SPAD-to-FMC connector Board (Front)</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/3DViewB.png"><img alt="_images/3DViewB.png" src="_images/3DViewB.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Fig.1 - I/Os 7x7SPAD-to-FMC connector Board (Back)</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="pinout-i-os-7x7spad-to-fmc-board">
+<h2>Pinout I/Os 7x7SPAD-to-FMC board<a class="headerlink" href="#pinout-i-os-7x7spad-to-fmc-board" title="Permalink to this heading"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>CH (VHDL)</strong></p></th>
+<th class="text-center head"><p><strong>DET</strong></p></th>
+<th class="text-center head"><p><strong>CONN</strong></p></th>
+<th class="text-center head"><p><strong>NAME HPC</strong></p></th>
+<th class="text-center head"><p><strong>FPGA</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td class="text-center"><p>OUT1_P</p></td>
+<td class="text-center"><p>D11</p></td>
+<td class="text-center"><p>LA05_P</p></td>
+<td class="text-center"><p>G29</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td class="text-center"><p>OUT1_N</p></td>
+<td class="text-center"><p>D12</p></td>
+<td class="text-center"><p>LA05_N</p></td>
+<td class="text-center"><p>F30</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td class="text-center"><p>OUT2_P</p></td>
+<td class="text-center"><p>H13</p></td>
+<td class="text-center"><p>LA07_P</p></td>
+<td class="text-center"><p>E28</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td class="text-center"><p>OUT2_N</p></td>
+<td class="text-center"><p>H14</p></td>
+<td class="text-center"><p>LA07_N</p></td>
+<td class="text-center"><p>D28</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td class="text-center"><p>OUT3_P</p></td>
+<td class="text-center"><p>E6</p></td>
+<td class="text-center"><p>HA05_P</p></td>
+<td class="text-center"><p>F15</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td class="text-center"><p>OUT3_N</p></td>
+<td class="text-center"><p>E7</p></td>
+<td class="text-center"><p>HA05_N</p></td>
+<td class="text-center"><p>E16</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td class="text-center"><p>OUT4_P</p></td>
+<td class="text-center"><p>J9</p></td>
+<td class="text-center"><p>HA07_P</p></td>
+<td class="text-center"><p>B14</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td class="text-center"><p>OUT4_N</p></td>
+<td class="text-center"><p>J10</p></td>
+<td class="text-center"><p>HA07_N</p></td>
+<td class="text-center"><p>A15</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td class="text-center"><p>OUT5_P</p></td>
+<td class="text-center"><p>H7</p></td>
+<td class="text-center"><p>LA02_P</p></td>
+<td class="text-center"><p>H24</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td class="text-center"><p>OUT5_N</p></td>
+<td class="text-center"><p>H8</p></td>
+<td class="text-center"><p>LA02_N</p></td>
+<td class="text-center"><p>H25</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td class="text-center"><p>OUT6_P</p></td>
+<td class="text-center"><p>D8</p></td>
+<td class="text-center"><p>LA01_P</p></td>
+<td class="text-center"><p>D26</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td class="text-center"><p>OUT6_N</p></td>
+<td class="text-center"><p>D9</p></td>
+<td class="text-center"><p>LA01_N</p></td>
+<td class="text-center"><p>C26</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td class="text-center"><p>OUT7_P</p></td>
+<td class="text-center"><p>E2</p></td>
+<td class="text-center"><p>HA01_P</p></td>
+<td class="text-center"><p>H14</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td class="text-center"><p>OUT7_N</p></td>
+<td class="text-center"><p>E3</p></td>
+<td class="text-center"><p>HA01_N</p></td>
+<td class="text-center"><p>G14</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td class="text-center"><p>OUT8_P</p></td>
+<td class="text-center"><p>C22</p></td>
+<td class="text-center"><p>LA18_P</p></td>
+<td class="text-center"><p>F21</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td class="text-center"><p>OUT8_N</p></td>
+<td class="text-center"><p>C23</p></td>
+<td class="text-center"><p>LA18_N</p></td>
+<td class="text-center"><p>E21</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td class="text-center"><p>OUT9_P</p></td>
+<td class="text-center"><p>C18</p></td>
+<td class="text-center"><p>LA14_P</p></td>
+<td class="text-center"><p>B28</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td class="text-center"><p>OUT9_N</p></td>
+<td class="text-center"><p>C19</p></td>
+<td class="text-center"><p>LA14_N</p></td>
+<td class="text-center"><p>A28</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td class="text-center"><p>OUT10_P</p></td>
+<td class="text-center"><p>J15</p></td>
+<td class="text-center"><p>HA14_P</p></td>
+<td class="text-center"><p>J16</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td class="text-center"><p>OUT10_N</p></td>
+<td class="text-center"><p>J16</p></td>
+<td class="text-center"><p>HA14_N</p></td>
+<td class="text-center"><p>H16</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td class="text-center"><p>OUT11_P</p></td>
+<td class="text-center"><p>G6</p></td>
+<td class="text-center"><p>LA00_P</p></td>
+<td class="text-center"><p>C25</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td class="text-center"><p>OUT11_N</p></td>
+<td class="text-center"><p>G7</p></td>
+<td class="text-center"><p>LA00_N</p></td>
+<td class="text-center"><p>B25</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td class="text-center"><p>OUT12_P</p></td>
+<td class="text-center"><p>K10</p></td>
+<td class="text-center"><p>HA06_P</p></td>
+<td class="text-center"><p>D14</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td class="text-center"><p>OUT12_N</p></td>
+<td class="text-center"><p>K11</p></td>
+<td class="text-center"><p>HA06_N</p></td>
+<td class="text-center"><p>C14</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td class="text-center"><p>OUT13_P</p></td>
+<td class="text-center"><p>F7</p></td>
+<td class="text-center"><p>HA04_P</p></td>
+<td class="text-center"><p>F11</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td class="text-center"><p>OUT13_N</p></td>
+<td class="text-center"><p>F8</p></td>
+<td class="text-center"><p>HA04_N</p></td>
+<td class="text-center"><p>E11</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td class="text-center"><p>OUT14_P</p></td>
+<td class="text-center"><p>G9</p></td>
+<td class="text-center"><p>LA03_P</p></td>
+<td class="text-center"><p>H26</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td class="text-center"><p>OUT15_P</p></td>
+<td class="text-center"><p>G21</p></td>
+<td class="text-center"><p>LA20_P</p></td>
+<td class="text-center"><p>E19</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td class="text-center"><p>OUT15_N</p></td>
+<td class="text-center"><p>G22</p></td>
+<td class="text-center"><p>LA20_N</p></td>
+<td class="text-center"><p>D19</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td class="text-center"><p>OUT16_P</p></td>
+<td class="text-center"><p>D17</p></td>
+<td class="text-center"><p>LA13_P</p></td>
+<td class="text-center"><p>A25</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td class="text-center"><p>OUT16_N</p></td>
+<td class="text-center"><p>D18</p></td>
+<td class="text-center"><p>LA13_N</p></td>
+<td class="text-center"><p>A26</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td class="text-center"><p>OUT17_P</p></td>
+<td class="text-center"><p>K16</p></td>
+<td class="text-center"><p>HA17_P</p></td>
+<td class="text-center"><p>G13</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td class="text-center"><p>OUT17_N</p></td>
+<td class="text-center"><p>K17</p></td>
+<td class="text-center"><p>HA17_N</p></td>
+<td class="text-center"><p>F13</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td class="text-center"><p>OUT18_P</p></td>
+<td class="text-center"><p>K7</p></td>
+<td class="text-center"><p>HA02_P</p></td>
+<td class="text-center"><p>D11</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td class="text-center"><p>OUT18_N</p></td>
+<td class="text-center"><p>K8</p></td>
+<td class="text-center"><p>HA02_N</p></td>
+<td class="text-center"><p>C11</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td class="text-center"><p>OUT19_P</p></td>
+<td class="text-center"><p>J6</p></td>
+<td class="text-center"><p>HA03_P</p></td>
+<td class="text-center"><p>C12</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td class="text-center"><p>OUT19_N</p></td>
+<td class="text-center"><p>J7</p></td>
+<td class="text-center"><p>HA03_N</p></td>
+<td class="text-center"><p>B12</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td class="text-center"><p>OUT20_P</p></td>
+<td class="text-center"><p>H10</p></td>
+<td class="text-center"><p>LA04_P</p></td>
+<td class="text-center"><p>G28</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td class="text-center"><p>OUT20_N</p></td>
+<td class="text-center"><p>H11</p></td>
+<td class="text-center"><p>LA04_N</p></td>
+<td class="text-center"><p>F28</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td class="text-center"><p>OUT21_P</p></td>
+<td class="text-center"><p>C10</p></td>
+<td class="text-center"><p>LA06_P</p></td>
+<td class="text-center"><p>H30</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td class="text-center"><p>OUT21_N</p></td>
+<td class="text-center"><p>C11</p></td>
+<td class="text-center"><p>LA06_N</p></td>
+<td class="text-center"><p>G30</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td class="text-center"><p>OUT22_P</p></td>
+<td class="text-center"><p>F16</p></td>
+<td class="text-center"><p>HA15_P</p></td>
+<td class="text-center"><p>H15</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td class="text-center"><p>OUT22_N</p></td>
+<td class="text-center"><p>F17</p></td>
+<td class="text-center"><p>HA15_N</p></td>
+<td class="text-center"><p>G15</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td class="text-center"><p>OUT23_P</p></td>
+<td class="text-center"><p>D23</p></td>
+<td class="text-center"><p>LA23_P</p></td>
+<td class="text-center"><p>B22</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td class="text-center"><p>OUT23_N</p></td>
+<td class="text-center"><p>D24</p></td>
+<td class="text-center"><p>LA23_N</p></td>
+<td class="text-center"><p>A22</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td class="text-center"><p>OUT24_P</p></td>
+<td class="text-center"><p>E18</p></td>
+<td class="text-center"><p>HA20_P</p></td>
+<td class="text-center"><p>K13</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td class="text-center"><p>OUT24_N</p></td>
+<td class="text-center"><p>E19</p></td>
+<td class="text-center"><p>HA20_N</p></td>
+<td class="text-center"><p>J13</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>24</strong></p></td>
+<td class="text-center"><p><strong>OUT25_P</strong></p></td>
+<td class="text-center"><p><strong>E9</strong></p></td>
+<td class="text-center"><p><strong>HA09_P</strong></p></td>
+<td class="text-center"><p><strong>F12</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>24</strong></p></td>
+<td class="text-center"><p><strong>OUT25_N</strong></p></td>
+<td class="text-center"><p><strong>E10</strong></p></td>
+<td class="text-center"><p><strong>HA09_N</strong></p></td>
+<td class="text-center"><p><strong>E13</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td class="text-center"><p>OUT26_P</p></td>
+<td class="text-center"><p>K13</p></td>
+<td class="text-center"><p>HA10_P</p></td>
+<td class="text-center"><p>A11</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td class="text-center"><p>OUT26_N</p></td>
+<td class="text-center"><p>K14</p></td>
+<td class="text-center"><p>HA10_N</p></td>
+<td class="text-center"><p>A12</p></td>
+</tr>
+<tr class="row-odd"><td><p>26</p></td>
+<td class="text-center"><p>OUT27_P</p></td>
+<td class="text-center"><p>F4</p></td>
+<td class="text-center"><p>HA00_P</p></td>
+<td class="text-center"><p>D12</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td class="text-center"><p>OUT27_N</p></td>
+<td class="text-center"><p>F5</p></td>
+<td class="text-center"><p>HA00_N</p></td>
+<td class="text-center"><p>D13</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td class="text-center"><p>OUT28_P</p></td>
+<td class="text-center"><p>D14</p></td>
+<td class="text-center"><p>LA09_P</p></td>
+<td class="text-center"><p>B30</p></td>
+</tr>
+<tr class="row-even"><td><p>27</p></td>
+<td class="text-center"><p>OUT28_N</p></td>
+<td class="text-center"><p>D15</p></td>
+<td class="text-center"><p>LA09_N</p></td>
+<td class="text-center"><p>A30</p></td>
+</tr>
+<tr class="row-odd"><td><p>28</p></td>
+<td class="text-center"><p>OUT29_P</p></td>
+<td class="text-center"><p>D20</p></td>
+<td class="text-center"><p>LA17_P</p></td>
+<td class="text-center"><p>F20</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td class="text-center"><p>OUT29_N</p></td>
+<td class="text-center"><p>D21</p></td>
+<td class="text-center"><p>LA17_N</p></td>
+<td class="text-center"><p>E20</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td class="text-center"><p>OUT30_P</p></td>
+<td class="text-center"><p>K22</p></td>
+<td class="text-center"><p>HA23_P</p></td>
+<td class="text-center"><p>L12</p></td>
+</tr>
+<tr class="row-even"><td><p>29</p></td>
+<td class="text-center"><p>OUT30_N</p></td>
+<td class="text-center"><p>K23</p></td>
+<td class="text-center"><p>HA23_N</p></td>
+<td class="text-center"><p>L13</p></td>
+</tr>
+<tr class="row-odd"><td><p>30</p></td>
+<td class="text-center"><p>OUT31_P</p></td>
+<td class="text-center"><p>G24</p></td>
+<td class="text-center"><p>LA22_P</p></td>
+<td class="text-center"><p>C20</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td class="text-center"><p>OUT31_N</p></td>
+<td class="text-center"><p>G25</p></td>
+<td class="text-center"><p>LA22_N</p></td>
+<td class="text-center"><p>B20</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td class="text-center"><p>OUT32_P</p></td>
+<td class="text-center"><p>H19</p></td>
+<td class="text-center"><p>LA15_P</p></td>
+<td class="text-center"><p>C24</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td class="text-center"><p>OUT32_N</p></td>
+<td class="text-center"><p>H20</p></td>
+<td class="text-center"><p>LA15_N</p></td>
+<td class="text-center"><p>B24</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td class="text-center"><p>OUT33_P</p></td>
+<td class="text-center"><p>F10</p></td>
+<td class="text-center"><p>HA08_P</p></td>
+<td class="text-center"><p>E14</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td class="text-center"><p>OUT33_N</p></td>
+<td class="text-center"><p>F11</p></td>
+<td class="text-center"><p>HA08_N</p></td>
+<td class="text-center"><p>E15</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td class="text-center"><p>OUT34_P</p></td>
+<td class="text-center"><p>C14</p></td>
+<td class="text-center"><p>LA10_P</p></td>
+<td class="text-center"><p>D29</p></td>
+</tr>
+<tr class="row-even"><td><p>33</p></td>
+<td class="text-center"><p>OUT34_N</p></td>
+<td class="text-center"><p>C15</p></td>
+<td class="text-center"><p>LA10_N</p></td>
+<td class="text-center"><p>C30</p></td>
+</tr>
+<tr class="row-odd"><td><p>34</p></td>
+<td class="text-center"><p>OUT35_P</p></td>
+<td class="text-center"><p>J12</p></td>
+<td class="text-center"><p>HA11_P</p></td>
+<td class="text-center"><p>B13</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td class="text-center"><p>OUT35_N</p></td>
+<td class="text-center"><p>J13</p></td>
+<td class="text-center"><p>HA11_N</p></td>
+<td class="text-center"><p>A13</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td class="text-center"><p>OUT36_P</p></td>
+<td class="text-center"><p>F19</p></td>
+<td class="text-center"><p>HA19_P</p></td>
+<td class="text-center"><p>H11</p></td>
+</tr>
+<tr class="row-even"><td><p>35</p></td>
+<td class="text-center"><p>OUT36_N</p></td>
+<td class="text-center"><p>F20</p></td>
+<td class="text-center"><p>HA19_N</p></td>
+<td class="text-center"><p>H12</p></td>
+</tr>
+<tr class="row-odd"><td><p>36</p></td>
+<td class="text-center"><p>OUT37_P</p></td>
+<td class="text-center"><p>H25</p></td>
+<td class="text-center"><p>LA21_P</p></td>
+<td class="text-center"><p>A20</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td class="text-center"><p>OUT37_N</p></td>
+<td class="text-center"><p>H26</p></td>
+<td class="text-center"><p>LA21_N</p></td>
+<td class="text-center"><p>A21</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td class="text-center"><p>OUT38_P</p></td>
+<td class="text-center"><p>J21</p></td>
+<td class="text-center"><p>HA22_P</p></td>
+<td class="text-center"><p>L11</p></td>
+</tr>
+<tr class="row-even"><td><p>37</p></td>
+<td class="text-center"><p>OUT38_N</p></td>
+<td class="text-center"><p>J22</p></td>
+<td class="text-center"><p>HA22_N</p></td>
+<td class="text-center"><p>K11</p></td>
+</tr>
+<tr class="row-odd"><td><p>38</p></td>
+<td class="text-center"><p>OUT39_P</p></td>
+<td class="text-center"><p>J18</p></td>
+<td class="text-center"><p>HA18_P</p></td>
+<td class="text-center"><p>K14</p></td>
+</tr>
+<tr class="row-even"><td><p>38</p></td>
+<td class="text-center"><p>OUT39_N</p></td>
+<td class="text-center"><p>J19</p></td>
+<td class="text-center"><p>HA18_N</p></td>
+<td class="text-center"><p>J14</p></td>
+</tr>
+<tr class="row-odd"><td><p>39</p></td>
+<td class="text-center"><p>OUT40_P</p></td>
+<td class="text-center"><p>E12</p></td>
+<td class="text-center"><p>HA13_P</p></td>
+<td class="text-center"><p>L16</p></td>
+</tr>
+<tr class="row-even"><td><p>39</p></td>
+<td class="text-center"><p>OUT40_N</p></td>
+<td class="text-center"><p>E13</p></td>
+<td class="text-center"><p>HA13_N</p></td>
+<td class="text-center"><p>K16</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td class="text-center"><p>OUT41_P</p></td>
+<td class="text-center"><p>H16</p></td>
+<td class="text-center"><p>LA11_P</p></td>
+<td class="text-center"><p>G27</p></td>
+</tr>
+<tr class="row-even"><td><p>40</p></td>
+<td class="text-center"><p>OUT41_N</p></td>
+<td class="text-center"><p>H17</p></td>
+<td class="text-center"><p>LA11_N</p></td>
+<td class="text-center"><p>F27</p></td>
+</tr>
+<tr class="row-odd"><td><p>41</p></td>
+<td class="text-center"><p>OUT42_P</p></td>
+<td class="text-center"><p>G12</p></td>
+<td class="text-center"><p>LA08_P</p></td>
+<td class="text-center"><p>E29</p></td>
+</tr>
+<tr class="row-even"><td><p>41</p></td>
+<td class="text-center"><p>OUT42_N</p></td>
+<td class="text-center"><p>G13</p></td>
+<td class="text-center"><p>LA08_N</p></td>
+<td class="text-center"><p>E30</p></td>
+</tr>
+<tr class="row-odd"><td><p>42</p></td>
+<td class="text-center"><p>OUT43_P</p></td>
+<td class="text-center"><p>E15</p></td>
+<td class="text-center"><p>HA16_P</p></td>
+<td class="text-center"><p>L15</p></td>
+</tr>
+<tr class="row-even"><td><p>42</p></td>
+<td class="text-center"><p>OUT43_N</p></td>
+<td class="text-center"><p>E16</p></td>
+<td class="text-center"><p>HA16_N</p></td>
+<td class="text-center"><p>K15</p></td>
+</tr>
+<tr class="row-odd"><td><p>43</p></td>
+<td class="text-center"><p>OUT44_P</p></td>
+<td class="text-center"><p>H22</p></td>
+<td class="text-center"><p>LA19_P</p></td>
+<td class="text-center"><p>G18</p></td>
+</tr>
+<tr class="row-even"><td><p>43</p></td>
+<td class="text-center"><p>OUT44_N</p></td>
+<td class="text-center"><p>H23</p></td>
+<td class="text-center"><p>LA19_N</p></td>
+<td class="text-center"><p>F18</p></td>
+</tr>
+<tr class="row-odd"><td><p>44</p></td>
+<td class="text-center"><p>OUT45_P</p></td>
+<td class="text-center"><p>K19</p></td>
+<td class="text-center"><p>HA21_P</p></td>
+<td class="text-center"><p>J11</p></td>
+</tr>
+<tr class="row-even"><td><p>44</p></td>
+<td class="text-center"><p>OUT45_N</p></td>
+<td class="text-center"><p>K20</p></td>
+<td class="text-center"><p>HA21_N</p></td>
+<td class="text-center"><p>J12</p></td>
+</tr>
+<tr class="row-odd"><td><p>45</p></td>
+<td class="text-center"><p>OUT46_P</p></td>
+<td class="text-center"><p>G15</p></td>
+<td class="text-center"><p>LA12_P</p></td>
+<td class="text-center"><p>C29</p></td>
+</tr>
+<tr class="row-even"><td><p>45</p></td>
+<td class="text-center"><p>OUT46_N</p></td>
+<td class="text-center"><p>G16</p></td>
+<td class="text-center"><p>LA12_N</p></td>
+<td class="text-center"><p>B29</p></td>
+</tr>
+<tr class="row-odd"><td><p>46</p></td>
+<td class="text-center"><p>OUT47_P</p></td>
+<td class="text-center"><p>C26</p></td>
+<td class="text-center"><p>LA27_P</p></td>
+<td class="text-center"><p>C19</p></td>
+</tr>
+<tr class="row-even"><td><p>46</p></td>
+<td class="text-center"><p>OUT47_N</p></td>
+<td class="text-center"><p>C27</p></td>
+<td class="text-center"><p>LA27_N</p></td>
+<td class="text-center"><p>B19</p></td>
+</tr>
+<tr class="row-odd"><td><p>47</p></td>
+<td class="text-center"><p>OUT48_P</p></td>
+<td class="text-center"><p>F13</p></td>
+<td class="text-center"><p>HA12_P</p></td>
+<td class="text-center"><p>C15</p></td>
+</tr>
+<tr class="row-even"><td><p>47</p></td>
+<td class="text-center"><p>OUT48_N</p></td>
+<td class="text-center"><p>F14</p></td>
+<td class="text-center"><p>HA12_N</p></td>
+<td class="text-center"><p>B15</p></td>
+</tr>
+<tr class="row-odd"><td><p>48</p></td>
+<td class="text-center"><p>OUT49_P</p></td>
+<td class="text-center"><p>G18</p></td>
+<td class="text-center"><p>LA16_P</p></td>
+<td class="text-center"><p>B27</p></td>
+</tr>
+<tr class="row-even"><td><p>48</p></td>
+<td class="text-center"><p>OUT49_N</p></td>
+<td class="text-center"><p>G19</p></td>
+<td class="text-center"><p>LA16_N</p></td>
+<td class="text-center"><p>A27</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>VREF1</p></td>
+<td class="text-center"><p>G27</p></td>
+<td class="text-center"><p>LA25_P</p></td>
+<td class="text-center"><p>G17</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p>VREF0</p></td>
+<td class="text-center"><p>G28</p></td>
+<td class="text-center"><p>LA25_N</p></td>
+<td class="text-center"><p>F17</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>EN_SPAD</p></td>
+<td class="text-center"><p>G30</p></td>
+<td class="text-center"><p>LA29_P</p></td>
+<td class="text-center"><p>C17</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>SDA</p></td>
+<td class="text-center"><p>C31</p></td>
+<td class="text-center"><p>HPC_IIC_SDA</p></td>
+<td class="text-center"><p>IIC MUX</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p>SCL</p></td>
+<td class="text-center"><p>C30</p></td>
+<td class="text-center"><p>HPC_IIC_SCL</p></td>
+<td class="text-center"><p>IIC MUX</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p><strong>IIT ADAPTER</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>J2</p></td>
+<td class="text-center"><p>H28</p></td>
+<td class="text-center"><p>LA24_P</p></td>
+<td class="text-center"><p>A16</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p>J3</p></td>
+<td class="text-center"><p>H29</p></td>
+<td class="text-center"><p>LA24_N</p></td>
+<td class="text-center"><p>A17</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>J4</p></td>
+<td class="text-center"><p>H31</p></td>
+<td class="text-center"><p>LA28_P</p></td>
+<td class="text-center"><p>D16</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p>J5</p></td>
+<td class="text-center"><p>H32</p></td>
+<td class="text-center"><p>LA28_N</p></td>
+<td class="text-center"><p>C16</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>J6</p></td>
+<td class="text-center"><p>H34</p></td>
+<td class="text-center"><p>LA30_P</p></td>
+<td class="text-center"><p>D22</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-center"><p>J7</p></td>
+<td class="text-center"><p>H35</p></td>
+<td class="text-center"><p>LA30_N</p></td>
+<td class="text-center"><p>C22</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td class="text-center"><p>J8</p></td>
+<td class="text-center"><p>H37</p></td>
+<td class="text-center"><p>LA32_P</p></td>
+<td class="text-center"><p>D21</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>PX24 Duplicated</strong></p></td>
+<td class="text-center"><p>J9</p></td>
+<td class="text-center"><p>H38</p></td>
+<td class="text-center"><p>LA32_N</p></td>
+<td class="text-center"><p>C21</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pinout5x5.html" class="btn btn-neutral float-left" title="SMA/SMB-to-FMC board" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="NIM2TTL.html" class="btn btn-neutral float-right" title="MPD NIM 2 TTL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fondazione Istituto Italiano di Tecnologia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

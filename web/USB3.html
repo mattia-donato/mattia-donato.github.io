@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USB data chip &mdash; BrightEyes-TTM 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BrightEyes-TTM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="BrightEyes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datareceiver.html">Data Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataprocessing.html">Data processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">FPGA architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#contact-us">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#references">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrightEyes-TTM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>USB data chip</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/USB3.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="usb-data-chip">
+<h1>USB data chip<a class="headerlink" href="#usb-data-chip" title="Permalink to this heading"></a></h1>
+<p>EZ-USB® FX3™ SuperSpeed Explorer Kit</p>
+<ul class="simple">
+<li><p><em>Brand:</em> Cypress®</p></li>
+<li><p><em>Product code:</em> CYUSB3KIT-003 EZ-USB</p></li>
+<li><p><em>Link to the product:</em> <a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3kit-003-ez-usb-fx3-superspeed-explorer-kit">https://www.cypress.com/documentation/development-kitsboards/cyusb3kit-003-ez-usb-fx3-superspeed-explorer-kit</a></p></li>
+</ul>
+<p>The BrightEyes-TTM design transmits the data to the PC via USB 3.0, a <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/boards/USB3.0/mainboard">FX3-based board</a> (Fig.1 - Cypress SuperSpeed Explorer kit board, CYUSB3KIT) connected through an <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/boards/USB3.0/FMCadapter">adapter card (CYUSB3ACC)</a> to LPC-FMC connector of the Kintex-7 evaluation board. In order to use the FX3 chip, a dedicated module in the FPGA was developed. It has a simple interface (essentially FIFO with a data-valid flag) for the data transmission and it manages the FX3 control signals and the data-bus. The module was designed to work with the FX3 programmed with the SF_streamIN firmware part of the <a class="reference external" href="https://www.infineon.com/cms/en/design-support/software/code-examples/usb-controllers-code-examples/usb-super-speed-code-examples/">AN65974</a> example provided by Cypress.</p>
+<p>The <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/boards/USB3.0/mainboard">Cypress SuperSpeed Explorer kit Board</a> and its <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/boards/USB3.0/FMCadapter">FMC adapter connector card</a> for the FPGA board are available at these links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3kit-003-ez-usb-fx3-superspeed-explorer-kit">Cypress SuperSpeed Explorer kit</a></p></li>
+<li><p><a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3acc-005-fmc-interconnect-board-ez-usb-fx3-superspeed">FMC adapter card</a></p></li>
+</ul>
+<div class="section" id="firmware">
+<h2>Firmware<a class="headerlink" href="#firmware" title="Permalink to this heading"></a></h2>
+<p>The Cypress SuperSpeed Explorer kit main board has to be programmed, to work with TTM FPGA firmware, with the SF_streamIN, which is part of the Cypress Application Note “AN65974 - Designing with the EZ-USB™ FX3”. The file AN65974.zip which contains the <strong>firmware SF_streamIN.img can be downloaded from this</strong> <a class="reference external" href="https://www.infineon.com/cms/en/design-support/software/code-examples/usb-controllers-code-examples/usb-super-speed-code-examples/">link</a>. This allow for the acquired data to be trasmitted to a host-PC.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/FX3_Cypress.PNG"><img alt="Cypress SuperSpeed Explorer kit" src="_images/FX3_Cypress.PNG" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Fig.1 - Cypress SuperSpeed Explorer kit</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>Follow the <a class="reference external" href="https://www.cypress.com/file/133861/download">Quick start guide</a> or Fig.2 below on how to interconnect the different components.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/USBchip_adapter_assembly.PNG"><img alt="I/Os SMA-FMC connector Board" src="_images/USBchip_adapter_assembly.PNG" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Fig.2 - Assembly for CYUSB3ACC-005 FMC Interconnect Board and the EZ-USB® FX3™ SuperSpeed Explorer Kit</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fondazione Istituto Italiano di Tecnologia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

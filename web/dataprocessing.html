@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data processing &mdash; BrightEyes-TTM 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FPGA architecture" href="architecture.html" />
+    <link rel="prev" title="Data Receiver" href="datareceiver.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BrightEyes-TTM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BrightEyes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datareceiver.html">Data Receiver</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples-firmware-v2-0">Examples (firmware v2.0)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#libttp-and-spadffs-v2-0">libttp and spadffs (v2.0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notebooks">Notebooks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tcspc-histogram">TCSPC histogram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#imaging">Imaging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fcs">FCS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ism-flim-phasor-analysis">ISM &amp; FLIM-Phasor analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples-legacy-firmware-v1-0">Examples  (legacy firmware v1.0)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#libttp-and-spadffs-legacy-v1-0">libttp and spadffs (legacy v1.0)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Notebooks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">TCSPC histogram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Imaging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">FCS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">ISM &amp; FLIM-Phasor analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-source-zenodo">Data Source (Zenodo)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">FPGA architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#contact-us">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#references">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrightEyes-TTM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Data processing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/dataprocessing.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-processing">
+<h1>Data processing<a class="headerlink" href="#data-processing" title="Permalink to this heading"></a></h1>
+<p>In this section you will find example of data processing.</p>
+<p>Data is acquired in a RAW format from the TTM using the same data protocol for all the possible and different applications. Then depending on the type of information/application needed is unpacked, calibrated and reconstructed (Fig.1).</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/DataProcessing.PNG"><img alt="_images/DataProcessing.PNG" src="_images/DataProcessing.PNG" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Fig.1 - Data processing procedure</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</div>
+<p>In order to be able to reconstruct and process the data streamed by the BrightEyes-TTM python libraries have to be previously installed in the host-processing computer. On a normal desktop PC, the Jupyter Notebooks examples have from a couple of minutes up-to tenths of minutes of execution time.</p>
+<div class="section" id="examples-firmware-v2-0">
+<h2>Examples (firmware v2.0)<a class="headerlink" href="#examples-firmware-v2-0" title="Permalink to this heading"></a></h2>
+<p>Before run the notebooks you need to install the libraries libttp and spadffs (v2.0)</p>
+<div class="section" id="libttp-and-spadffs-v2-0">
+<h3>libttp and spadffs (v2.0)<a class="headerlink" href="#libttp-and-spadffs-v2-0" title="Permalink to this heading"></a></h3>
+<p>In order to read the raw data from the BrightEyes-TTM acquisition <code class="docutils literal notranslate"><span class="pre">libttp</span></code> is required.
+In the v2.0 you can easily install with the following command. Use an enviroment manager like venv</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">libttp</span> 
+</pre></div>
+</div>
+<p>Moreover to run correctly the BrightEyes-TTM Notebook examples <code class="docutils literal notranslate"><span class="pre">spadffs</span></code> is needed too.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">VicidominiLab</span><span class="o">/</span><span class="n">libspadffs</span><span class="o">/</span><span class="n">ttm</span><span class="o">/</span><span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">VicidominiLab</span><span class="o">/</span><span class="n">libspadffs</span><span class="o">.</span><span class="n">git</span><span class="nd">@ttm</span>
+
+<span class="p">(</span><span class="n">note</span> <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="n">install</span> <span class="s2">&quot;git&quot;</span> <span class="n">before</span> <span class="n">run</span> <span class="n">the</span> <span class="n">last</span> <span class="n">command</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">use</span> <span class="n">a</span> <span class="n">Conda</span> <span class="n">enviroment</span> <span class="n">use</span> <span class="s2">&quot;conda install git&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">libttp</span></code> uses Cython libraries. If you want to run in Windows you need to install Microsoft Build Tools. In Linux this is not required.</p>
+</div>
+</div>
+<div class="section" id="notebooks">
+<h3>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this heading"></a></h3>
+<p>Before run the notebooks you need to install the libraries libttp and spadffs (v2.0)</p>
+<div class="section" id="tcspc-histogram">
+<h4>TCSPC histogram<a class="headerlink" href="#tcspc-histogram" title="Permalink to this heading"></a></h4>
+<p>Thanks to the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v2/TCSPC_Histogram_reconstruction.ipynb">TCSPC histogram reconstruction Jupyter Notebook example</a> it is possible to reconstruct and look the data from a simple spectroscopy point of view by building the TCSPC histogram for all the acquired channels.</p>
+</div>
+<div class="section" id="imaging">
+<h4>Imaging<a class="headerlink" href="#imaging" title="Permalink to this heading"></a></h4>
+<p>If pixel,line and frame clocks are connected to the BrightEyesTTM then intensity images as well as FLIM images can be reconstructed too. The <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v2/Image_reconstruction.ipynb">image reconstruction Jupyter Notebook example</a> shows all the steps to reconstruct a <strong>4D dataset (x,y,t,ch)</strong> and visualize microscopy images.</p>
+</div>
+<div class="section" id="fcs">
+<h4>FCS<a class="headerlink" href="#fcs" title="Permalink to this heading"></a></h4>
+<p>If the final goal of the measurement is to retrieve information from the correlation curve the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v2/FCS.ipynb">FCS Jupyter Notebook example</a> shows how to calculate the correlation curve.</p>
+</div>
+<div class="section" id="ism-flim-phasor-analysis">
+<h4>ISM &amp; FLIM-Phasor analysis<a class="headerlink" href="#ism-flim-phasor-analysis" title="Permalink to this heading"></a></h4>
+<p>This Jupyter notebook example can be used for implementing the pixel reassignment algorithm for image scanning microscopy (ISM) applications and for performing FLIM-phasor analysis with time-resolved data. After having used the image reconstruction Jupyter Notebook example for reconstructing a 4D dataset (x,y,t,ch) it is possible to feed this dataset into the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v2/ISM_Decay_Reconstruction.ipynb">ISM &amp; FLIM-phasor notebook</a>. NB - time alignment of the fluorescence lifetime decays is required, accross the different available channels (ch), before feeding a 4D dataset into this notebook.</p>
+</div>
+</div>
+</div>
+<div class="section" id="examples-legacy-firmware-v1-0">
+<h2>Examples  (legacy firmware v1.0)<a class="headerlink" href="#examples-legacy-firmware-v1-0" title="Permalink to this heading"></a></h2>
+<p>Before run the notebooks you need to install the libraries libttp and spadffs (v1.0)</p>
+<div class="section" id="libttp-and-spadffs-legacy-v1-0">
+<h3>libttp and spadffs (legacy v1.0)<a class="headerlink" href="#libttp-and-spadffs-legacy-v1-0" title="Permalink to this heading"></a></h3>
+<p>In order to install the libttp, spadffs version v1.0. Follow the links below for downloading and installing the required librares.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">libttp</span></code> uses Cython libraries. If you want to run in Windows you need to install Microsoft Build Tools. In Linux this is not required.</p>
+</div>
+<ul class="simple">
+<li><p>TTM library for reconstructing and calibrating time-tagging data streamet by the BrightEyes-TTM to the host-PC - <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v1.0/dataProcessing/libs/libttp">lipttp</a></p></li>
+<li><p>FFS library for reconstructing the correlation curve and implementing FCS - <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v1.0/dataProcessing/libs/spad_ffs">spad_ffs</a></p></li>
+</ul>
+<p>In order to give the user some preliminary tools to process, reconstruct and use the acquired TTM data we developed 3 main examples using Jupyter Notebook and we provide the associated examples dataset on <a class="reference external" href="https://doi.org/10.5281/zenodo.4912656">Zenodo</a>:</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h3>Notebooks<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<div class="section" id="id2">
+<h4>TCSPC histogram<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<p>Thanks to the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v1/TCSPC_Histogram_reconstruction.ipynb">TCSPC histogram reconstruction Jupyter Notebook example</a> it is possible to reconstruct and look the data from a simple spectroscopy point of view by building the TCSPC histogram for all the acquired channels.</p>
+</div>
+<div class="section" id="id3">
+<h4>Imaging<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h4>
+<p>If pixel,line and frame clocks are connected to the BrightEyesTTM then intensity images as well as FLIM images can be reconstructed too. The <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v1/Image_reconstruction.ipynb">image reconstruction Jupyter Notebook example</a> shows all the steps to reconstruct a <strong>4D dataset (x,y,t,ch)</strong> and visualize microscopy images.</p>
+</div>
+<div class="section" id="id4">
+<h4>FCS<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h4>
+<p>If the final goal of the measurement is to retrieve information from the correlation curve the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/notebooks/v1/FCS.ipynb">FCS Jupyter Notebook example</a> shows how to calculate the correlation curve.</p>
+</div>
+<div class="section" id="id5">
+<h4>ISM &amp; FLIM-Phasor analysis<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h4>
+<p>This Jupyter notebook example can be used for implementing the pixel reassignment algorithm for image scanning microscopy (ISM) applications and for performing FLIM-phasor analysis with time-resolved data. After having used the image reconstruction Jupyter Notebook example for reconstructing a 4D dataset (x,y,t,ch) it is possible to feed this dataset into the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/notebooks/v1/ISM_Decay_Reconstruction_BrightEyes-TTM.ipynb">ISM &amp; FLIM-phasor notebook</a>. NB - time alignment of the fluorescence lifetime decays is required, accross the different available channels (ch), before feeding a 4D dataset into this notebook.</p>
+</div>
+<div class="section" id="data-source-zenodo">
+<h4>Data Source (Zenodo)<a class="headerlink" href="#data-source-zenodo" title="Permalink to this heading"></a></h4>
+<p>The data used in these examples can be downloaded from the link:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Link             </p></th>
+<th class="head"><p>Associated example dataset on Zenodo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TSCPC Histogram</p></td>
+<td><p>RAW legacy (v1.0)</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.4912656"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4912656.svg" /></a></p></td>
+<td><p><strong>Fluorescence_Spectroscopy_Dataset_40MHz</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Imaging</p></td>
+<td><p>RAW legacy (v1.0)</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.4912656"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4912656.svg" /></a></p></td>
+<td><p><strong>FLIM_512x512pixels_dwelltime250us_Dataset_40MHz</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>FCS</p></td>
+<td><p>RAW legacy (v1.0)</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.4912656"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4912656.svg" /></a></p></td>
+<td><p><strong>FCS_scanfcs_Dataset_40MHz</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>TSCPC Histogram</p></td>
+<td><p>RAW (v2.0)</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.6782161"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6782161.svg" /></a></p></td>
+<td><p><strong>FLIM_80MHz_512x512pixel_120FOV_pixeldwelltime200us.ttr</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Imaging</p></td>
+<td><p>RAW (v2.0)</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.6782161"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6782161.svg" /></a></p></td>
+<td><p><strong>FLIM_80MHz_512x512pixel_120FOV_pixeldwelltime200us.ttr</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>FCS</p></td>
+<td><p>RAW (v2.0)</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.5281/zenodo.6782161"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.6782161.svg" /></a></p></td>
+<td><p><strong>FCS_SpotVariation_80MHz.ttr</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datareceiver.html" class="btn btn-neutral float-left" title="Data Receiver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="architecture.html" class="btn btn-neutral float-right" title="FPGA architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fondazione Istituto Italiano di Tecnologia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

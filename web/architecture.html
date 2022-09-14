@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPGA architecture &mdash; BrightEyes-TTM 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authors" href="credits.html" />
+    <link rel="prev" title="Data processing" href="dataprocessing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BrightEyes-TTM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BrightEyes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datareceiver.html">Data Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataprocessing.html">Data processing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FPGA architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#contact-us">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#references">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrightEyes-TTM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>FPGA architecture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/architecture.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="fpga-architecture">
+<h1>FPGA architecture<a class="headerlink" href="#fpga-architecture" title="Permalink to this heading"></a></h1>
+<p>The BrightEyes-TTM implementation was conceived and designed having in mind the fluorescence applications thus providing a good compromise between cost, photon-timing precision and resolution, temporal range, electronics dead-time, maximum photon-flux. The low FPGA resource in the current implementation ensures the highly scalability of the architecture, potentially enabling more channels and, in general, new applications. We chose an FPGA approach to grant both quick prototyping and versatility, and to give the miscroscopy community the posibility of further modifing the TTM depending on future and always-evolving needs.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/BrightEyesTTM_architecture.PNG"><img alt="BrightEyes TTM architecture" src="_images/BrightEyesTTM_architecture.PNG" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Fig.2 - BrightEyes TTM architecture</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<p>VHDL source code TTM architecture components:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/input_filter.vhd">Hit filter</a> - The hit-filter component is engineered and deployed to shape the incoming photons and sync signal lengths based on the sampling FPGA clock period and, at the same time, for generating a toggle signal event (the photon or sync enable signal) for each detected photon or laser pulse event.</p></li>
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/tdc_module.vhd">Flash TDC</a> - The core constituent of the flash TDC module is a tapped delay line (TDL). The TDL is made up by a series of small delay elements (CARRY4 elements for the Kintex-7 FPGA used - for more info check page 43 of <a class="reference external" href="https://www.xilinx.com/support/documentation/user_guides/ug474_7Series_CLB.pdf">7 Series FPGAs Configurable Logic Block User Guide</a> joined in a chain architecture and is used to delay an input (photon/START) signal with respect to a reference-sampling FPGA digital clock. Whitin the Flash TDC module also a thermometer-to-binary encoder (T2B) is embedded: a dedicated FPGA circuit is needed to interpret and decode the TDL output data. The T2B converts the TDL readout into a binary format allowing for a more effective data registration in terms of memory resources utilisation.</p></li>
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/fifo_iit.v">FIFO memory</a> - First-In First-Out (FIFO) internal FPGA memory used to store the registered photons and laser sync events before sending their info out to a host processing unit.</p></li>
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/to_fxr_workaround.v">Data interface module</a> - Module component that allows the data to be transfered from the FPGA to the  EZ-USB® FX3™ SuperSpeed Explorer Kit.</p>
+<ul>
+<li><p>In the v2 version there is a <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/datapreparation_new.vhd">datapreparation</a> and <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/datapreparation_new_with_zerosuppression.vhd">datapreparation_zerosuppression</a>. The first packs the data according to the v2 protocol and the second module avoid to transmit the channel data which are not hit.</p></li>
+<li><p>In the v1 version the data are packet directly in the <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/tdc_module.vhd">Flash TDC</a>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Input map</strong>
+The version v2.0 have two <code class="docutils literal notranslate"><span class="pre">top</span></code> module. In the Vivado project one must be disabled and the other one must be enabled and selected as Top module:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/xdc/top_diff.vhd">top_diff.vhd</a> (which needs <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/xdc/top_diff.xdc">top_diff.xdc</a> enabled - for differential inputs - designed the <a class="reference internal" href="pinout7x7.html"><span class="doc std std-doc">SPAD7x7-to-FMC adapter board</span></a> )</p></li>
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/xdc/top_single_ended.vhd">top_single_ended.vhd</a> (which needs <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/xdc/top_single_ended.xdc">top_single_ended.xdc</a> enabled - for single-ended inputs - designed for <a class="reference internal" href="pinout5x5.html"><span class="doc std std-doc">SMA/SMB-to-FMC adapter board</span></a> )</p></li>
+</ul>
+</div>
+<p>The BrightEyes-TTM architecture (Fig.2) combines N+1 (N = 25 photon channels in this implementation) tapped delay lines (TDLs) and a coarse counter running at 240 MHz to obtain N fine TDCs with tens of picoseconds precision (for the start-stop time of each photon channel), and M coarse TDCs with a nanosecond precision (M = 3 reference channels in this implementation).</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dataprocessing.html" class="btn btn-neutral float-left" title="Data processing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="credits.html" class="btn btn-neutral float-right" title="Authors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fondazione Istituto Italiano di Tecnologia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

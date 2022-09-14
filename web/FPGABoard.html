@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightEyes-TTM Mainboard &mdash; BrightEyes-TTM 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FMC-to-USB Adapter" href="FMCAdapter.html" />
+    <link rel="prev" title="Hardware" href="hardware.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BrightEyes-TTM
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BrightEyes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="hardware.html">Hardware</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">BrightEyes-TTM Mainboard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#brighteyes-ttm-firmware">BrightEyes-TTM Firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FMCAdapter.html">FMC-to-USB Adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IOConnectorBoard.html">I/Os adapters &amp; Pinout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#optional-hardware-parts">Optional hardware parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#how-to-assemble-setup-the-harware">How to assemble / setup the harware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware.html#pc-requirements">PC requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datareceiver.html">Data Receiver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataprocessing.html">Data processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">FPGA architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#contact-us">Contact us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html#references">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BrightEyes-TTM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="hardware.html">Hardware</a> &raquo;</li>
+      <li>BrightEyes-TTM Mainboard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/FPGABoard.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="tex2jax_ignore mathjax_ignore section" id="brighteyes-ttm-mainboard">
+<h1>BrightEyes-TTM Mainboard<a class="headerlink" href="#brighteyes-ttm-mainboard" title="Permalink to this heading"></a></h1>
+<p><strong>(based on Kintex-7 evaluation board)</strong></p>
+<p>BrightEyes-TTM is based on a commercially available and low cost <a class="reference external" href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">field-programmable-gate-array (FPGA)</a> evaluation Board (Fig.1), equipped with a state-of-the-art FPGA (the <a class="reference external" href="https://www.xilinx.com/products/silicon-devices/fpga/kintex-7.html">Kintex 7</a>, XC7K325T-2FFG900C) and a series of <span class="xref myst">I/Os connectors</span> granting an easy interface of the board with the laser scanning microscope controller, the detector(s) and the personal computer.</p>
+<p>Xilinx® FPGA Kintex-7 KC705 Evaluation Board</p>
+<ul class="simple">
+<li><p><em>Brand:</em> Xilinx®</p></li>
+<li><p><em>Product code:</em> EK-K7-KC705-G</p></li>
+<li><p><em>Link to the product:</em> <a class="reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-k7-kc705-g.html">https://www.xilinx.com/products/boards-and-kits/ek-k7-kc705-g.html</a></p></li>
+</ul>
+<p>The BrightEyes-TTM project has been designed, synthesed and implementated with the software Xilinx Vivado 2017.4 more info <a class="reference external" href="https://www.xilinx.com/products/design-tools/vivado.html">Xilinx Vivado Design Suite</a>. After having downloaded and installed <a class="reference external" href="https://www.xilinx.com/products/design-tools/vivado.html">Vivado Design Suite</a> (Xilinx FPGA Programming software environment) the Xilinx FPGA evaluation card can be directly programmed with a precompiled firmware available here below.
+The source code VHDL/Verilog is available on the GitHub repository <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/FPGA/ttm/hdl">BrightEyes-TTM FPGA VHDL/Verilog code</a></p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/KC705_FPGA.png"><img alt="Xilinx FPGA Board" src="_images/KC705_FPGA.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Fig.1 - Xilinx FPGA Board</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</div>
+<div class="section" id="brighteyes-ttm-firmware">
+<h2>BrightEyes-TTM Firmware<a class="headerlink" href="#brighteyes-ttm-firmware" title="Permalink to this heading"></a></h2>
+<p id="ttmfirmware">The current firmware (.bit files) ready to flash the Xilinx KC705 Kintex-7 Evaluation board are available here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/raw/v2.0/FPGA/ttm/project/ttm.runs/impl_1/top_single_ended.bit">BrightEyes-TTM FPGA firmware</a>: 25 channels, single-ended inputs, new protocol (v.2.0)</p></li>
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/raw/v2.0/FPGA/ttm/project/ttm.runs/impl_1/top_diff.bit">BrightEyes-TTM FPGA firmware</a>: 25 channels, differential inputs, new protocol (v.2.0)</p></li>
+</ul>
+<p>Legacy firmware:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/raw/v1.0/FPGA/ttm/project/ttm.runs/impl_1/top.bit">BrightEyes-TTM FPGA firmware</a>: 21 channels, single-ended inputs, old protocol (v.1.0)</p></li>
+</ul>
+<p>If you want modify the project or you want know more about the BrightEyes-TTM firmware design see the <a class="reference internal" href="architecture.html"><span class="doc std std-doc">BrightEyes-TTM FPGA architecture</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hardware.html" class="btn btn-neutral float-left" title="Hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FMCAdapter.html" class="btn btn-neutral float-right" title="FMC-to-USB Adapter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Fondazione Istituto Italiano di Tecnologia.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

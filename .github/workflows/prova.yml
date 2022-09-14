@@ -44,7 +44,10 @@ jobs:
            cp -Rv tmp/source/_build/* ./currentRepo/web/
            touch .nojekyll
            find . -type d
-           git add -v ./currentRepo/web/
+           git config --local user.email "action@github.com"
+           git config --local user.name "GitHub Action"           
+           git add -v currentRepo/web/
+           git commit -m "Update documentation" -a || true           
            git push
 
 # #     - uses: actions/upload-artifact@v1

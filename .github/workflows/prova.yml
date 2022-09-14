@@ -14,12 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Initial Situation
-    -  run: |
+    - name: tree
+      run: |
            find . -type d
     - name: Initial Situation           
-    - uses: actions/checkout@v3
-    -  run: |
+      uses: actions/checkout@v3
+    - name: tree      
+      run: |
            find . -type d
     
 #     # Standard drop-in approach that should work for most people.

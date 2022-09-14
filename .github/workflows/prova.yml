@@ -60,7 +60,9 @@ jobs:
     - name: Check situation
       run: |
            cp -rv mattia-donato.github.io/BrightEyes-TTM/docs/source/_build/* mattia-donato.github.io/prova/
-           find  -type d
+           find . -type d
+           echo -
+           echo $HOME
            
     - uses: actions/upload-artifact@v1
       with:
@@ -70,7 +72,7 @@ jobs:
     - name: Commit documentation changes
       run: |
            pwd
-           find / -type d      
+           find . -type d      
            cd mattia-donato.github.io/BrightEyes-TTM/docs/source
            git config --local user.email "action@github.com"
            git config --local user.name "GitHub Action"           

@@ -35,7 +35,7 @@ jobs:
       with:
         pre-build-command: |
                            pip install myst-parser[linkify] sphinx-rtd-theme
-        docs-folder: "$GITHUB_WORKSPACE/docs/source"
+        docs-folder: "tmp/source"
         build-command: "sphinx-build -b html . _build"
         
     - name: tree      

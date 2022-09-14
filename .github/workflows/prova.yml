@@ -51,7 +51,8 @@ jobs:
       with:
         pre-build-command: |
                            ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
-                           pip install myst-parser[linkify]
+                           pip install myst-parser[linkify] sphinx-rtd-theme
+
         docs-folder: "mattia-donato.github.io/BrightEyes-TTM/docs/source"
         build-command: "sphinx-build -b html . _build"
 

@@ -70,7 +70,7 @@ jobs:
         cd mattia-donato.github.io/docs/source/_build/
         git add . -v
         git commit -m "Update documentation" -a || true
-        cd ~
+        cd
         find  -type d
     - name: Push changes
       uses: ad-m/github-push-action@master

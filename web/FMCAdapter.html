@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FMC-to-USB Adapter &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -95,15 +96,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="fmc-to-usb-adapter">
+  <section class="tex2jax_ignore mathjax_ignore" id="fmc-to-usb-adapter">
 <h1>FMC-to-USB Adapter<a class="headerlink" href="#fmc-to-usb-adapter" title="Permalink to this heading"></a></h1>
 <p>FMC Interconnect Board for the EZ-USB® FX3™, to connect a Xilinx® FPGA board with the EZ-USB® FX3™ SuperSpeed Explorer Kit</p>
 <p>The USB-FMC needs two component the interconnection board and the USB-FX3 chip.</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/USBchip_adapter_assembly.PNG"><img alt="I/Os SMA-FMC connector Board" src="_images/USBchip_adapter_assembly.PNG" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Fig.1 - Assembly for CYUSB3ACC-005 FMC Interconnect Board and the EZ-USB® FX3™ SuperSpeed Explorer Kit</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-<div class="section" id="interconnect-board">
+<figcaption>
+<p><span class="caption-text">Fig.1 - Assembly for CYUSB3ACC-005 FMC Interconnect Board and the EZ-USB® FX3™ SuperSpeed Explorer Kit</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="interconnect-board">
 <h2>Interconnect board<a class="headerlink" href="#interconnect-board" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><em>Brand:</em> Cypress®</p></li>
@@ -112,8 +115,8 @@
 </ul>
 <p>The <a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3acc-005-fmc-interconnect-board-ez-usb-fx3-superspeed">CYUSB3ACC-005 FMC Interconnect Board for the EZ-USB® FX3™ SuperSpeed Explorer Kit</a> is used to interconnect with the Xilinx® KC705 Evaluation kit FPGA board with the EZ-USB® FX3™ SuperSpeed Explorer Kit.</p>
 <p>Follow the <a class="reference external" href="https://www.cypress.com/file/133861/download">Quick start guide</a> or Fig.1 below on how to interconnect the different components.</p>
-</div>
-<div class="section" id="usb-data-chip">
+</section>
+<section id="usb-data-chip">
 <h2>USB data chip<a class="headerlink" href="#usb-data-chip" title="Permalink to this heading"></a></h2>
 <p>EZ-USB® FX3™ SuperSpeed Explorer Kit</p>
 <ul class="simple">
@@ -127,24 +130,28 @@
 <li><p><a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3kit-003-ez-usb-fx3-superspeed-explorer-kit">Cypress SuperSpeed Explorer kit</a></p></li>
 <li><p><a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3acc-005-fmc-interconnect-board-ez-usb-fx3-superspeed">FMC adapter card</a></p></li>
 </ul>
-<div class="section" id="firmware">
+<section id="firmware">
 <h3>Firmware<a class="headerlink" href="#firmware" title="Permalink to this heading"></a></h3>
 <p>The Cypress SuperSpeed Explorer kit main board has to be programmed, to work with TTM FPGA firmware, with the SF_streamIN, which is part of the Cypress Application Note “AN65974 - Designing with the EZ-USB™ FX3”. The file AN65974.zip which contains the <strong>firmware SF_streamIN.img can be downloaded from this</strong> <a class="reference external" href="https://www.infineon.com/cms/en/design-support/software/code-examples/usb-controllers-code-examples/usb-super-speed-code-examples/">link</a>. This allow for the acquired data to be trasmitted to a host-PC.</p>
-<div class="figure align-center" id="id2">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/FX3_Cypress.PNG"><img alt="Cypress SuperSpeed Explorer kit" src="_images/FX3_Cypress.PNG" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-text">Fig.1 - Cypress SuperSpeed Explorer kit</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Fig.1 - Cypress SuperSpeed Explorer kit</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Follow the <a class="reference external" href="https://www.cypress.com/file/133861/download">Quick start guide</a> or Fig.2 below on how to interconnect the different components.</p>
-<div class="figure align-center" id="id3">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="_images/USBchip_adapter_assembly.PNG"><img alt="I/Os SMA-FMC connector Board" src="_images/USBchip_adapter_assembly.PNG" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-text">Fig.2 - Assembly for CYUSB3ACC-005 FMC Interconnect Board and the EZ-USB® FX3™ SuperSpeed Explorer Kit</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Fig.2 - Assembly for CYUSB3ACC-005 FMC Interconnect Board and the EZ-USB® FX3™ SuperSpeed Explorer Kit</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p><a class="reference external" href="https://www.cypress.com/documentation/development-kitsboards/cyusb3kit-003-ez-usb-fx3-superspeed-explorer-kit">CYUSB3KIT-003 EZ-USB® FX3™ SuperSpeed Explorer Kit</a></p>
 <p><a class="reference external" href="https://www.cypress.com/file/133836/download">Programming guide</a> from page #20</p>
 <p>Programming firmware <a class="reference external" href="https://www.infineon.com/dgdl/Infineon-AN65974-ApplicationNotes-v17_00-EN.zip?fileId=8ac78c8c7cdc391c017d073967ed5de5">link</a></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

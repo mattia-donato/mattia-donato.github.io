@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Receiver &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -92,18 +93,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-receiver">
+  <section class="tex2jax_ignore mathjax_ignore" id="data-receiver">
 <h1>Data Receiver<a class="headerlink" href="#data-receiver" title="Permalink to this heading"></a></h1>
 <p>There are two version of the BrightEyes-TTM data receiver. The “Old Protocol” version for the firmware (v1.0)  and the “New Protocol” version for the firmware (v2.0). The data receiver the libraries <em>libusb</em> and save the stream of data from USB 3.0 to a raw file. We suggest to use the Linux version but it is available also a Windows porting. Link to the folder in the repository <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/dataReceiver">dataReceiver</a>.</p>
-<div class="section" id="datareceiver-linux">
+<section id="datareceiver-linux">
 <h2>DataReceiver Linux<a class="headerlink" href="#datareceiver-linux" title="Permalink to this heading"></a></h2>
-<div class="section" id="requirements">
+<section id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libusb</span><span class="o">-</span><span class="n">dev</span> <span class="n">libusb</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">dev</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-to-compile">
+</section>
+<section id="how-to-compile">
 <h3>How to compile?<a class="headerlink" href="#how-to-compile" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(Legacy Protocol - Bright-TTM firmware v1.0)
 gcc &quot;dataReceiver.c&quot; -O2 -g `pkg-config libusb-1.0 --libs --cflags`  -lpthread -o &quot;dataReceiver&quot;
@@ -113,8 +114,8 @@ gcc &quot;dataReceiver.c&quot; -O2 -g `pkg-config libusb-1.0 --libs --cflags`  -
 gcc &quot;dataReceiver-newProt.c&quot; -O2 -g `pkg-config libusb-1.0 --libs --cflags`  -lpthread -o &quot;dataReceiver-newProt&quot;
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-to-run">
+</section>
+<section id="how-to-run">
 <h3>How to run?<a class="headerlink" href="#how-to-run" title="Permalink to this heading"></a></h3>
 <p>The software crash if the subfolder <strong>data/</strong> is it not present in the folder where the <strong>dataReceiver</strong> is executed.
 Create the  <strong>data/</strong> folder:</p>
@@ -131,58 +132,60 @@ Create the  <strong>data/</strong> folder:</p>
 <span class="o">./</span><span class="n">dataReceiver</span><span class="o">-</span><span class="n">newProt</span>
 </pre></div>
 </div>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/dataReceiverNew.png"><img alt="_images/dataReceiverNew.png" src="_images/dataReceiverNew.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Fig. The dataReceiver-newProt running in Linux</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-</div>
-</div>
+<figcaption>
+<p><span class="caption-text">Fig. The dataReceiver-newProt running in Linux</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="datareceiver-windows-only-firmware-v1-0">
+<section id="datareceiver-windows-only-firmware-v1-0">
 <h2>DataReceiver Windows (only firmware v1.0)<a class="headerlink" href="#datareceiver-windows-only-firmware-v1-0" title="Permalink to this heading"></a></h2>
 <p>The DataReceiverW is the porting of the DataReceiver for Linux to Windows. It based on the libusb-win32 driver and it is in an experimental phase.
 The installation of the libusb-win32 drivers can be done with the tool Zadig. It is a software that allows to install and to switch different drivers on the USB devices in Windows. It can be downloaded the site <a class="reference external" href="https://zadig.akeo.ie/">https://zadig.akeo.ie/</a> .</p>
-<div class="section" id="how-to-install-libusb-32-driver-in-windows-10">
+<section id="how-to-install-libusb-32-driver-in-windows-10">
 <h3>How to install libusb-32 driver in Windows 10<a class="headerlink" href="#how-to-install-libusb-32-driver-in-windows-10" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Download Zadig from  <a class="reference external" href="https://zadig.akeo.ie/">https://zadig.akeo.ie/</a></p></li>
 <li><p>Run Zadig and grant the permission to change your system.</p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_0.png"><img alt="_images/zadig_0.png" src="_images/zadig_0.png" style="width: 50%;" /></a>
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_1.png"><img alt="_images/zadig_1.png" src="_images/zadig_1.png" style="width: 100%;" /></a>
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_2.png"><img alt="_images/zadig_2.png" src="_images/zadig_2.png" style="width: 100%;" /></a>
-</div>
+</figure>
 <p>Select in the menu <strong>Options –&gt; List All Devices</strong></p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_3.png"><img alt="_images/zadig_3.png" src="_images/zadig_3.png" style="width: 100%;" /></a>
-</div>
+</figure>
 <p>Select in the list of devices <strong>FX3</strong></p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_4.png"><img alt="_images/zadig_4.png" src="_images/zadig_4.png" style="width: 100%;" /></a>
-</div>
+</figure>
 <p>Select in the scrollbox <strong>libusb-win32</strong> and click on <strong>“Replace Driver”</strong> and wait for the installation</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_5.png"><img alt="_images/zadig_5.png" src="_images/zadig_5.png" style="width: 100%;" /></a>
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/zadig_6.png"><img alt="_images/zadig_6.png" src="_images/zadig_6.png" style="width: 100%;" /></a>
-</div>
+</figure>
 <p>Now the libusb-win32 drivers should be correctly installed.</p>
-</div>
-<div class="section" id="how-to-run-datareceiverw">
+</section>
+<section id="how-to-run-datareceiverw">
 <h3>How to run DataReceiverW<a class="headerlink" href="#how-to-run-datareceiverw" title="Permalink to this heading"></a></h3>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="_images/datawriterW.png"><img alt="_images/datawriterW.png" src="_images/datawriterW.png" style="width: 100%;" /></a>
-</div>
+</figure>
 <p>The <strong>dataReceiverW.exe</strong> executable file is present in the repository at the following link <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/dataReceiver/windows/v1/bin">dataReceiverW (v1)</a> and <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/dataReceiver/windows/v2/bin">dataReceiverW-newProt (v2)</a>. It is a command-line interface CLI software, so it is suggested to run into a Command Prompt (cmd.exe). To run correctly the dataReceiverW needs the library <strong>libpthread.dll</strong> and <strong>libusb-1.0.dll</strong>. The software crash if the subfolder <strong>data\</strong> is it not present in the folder where the dataReceiverW is executed.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

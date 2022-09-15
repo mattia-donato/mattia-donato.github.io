@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8xDigiBuffer &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -92,7 +93,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="xdigibuffer">
+  <section class="tex2jax_ignore mathjax_ignore" id="xdigibuffer">
 <h1>8xDigiBuffer<a class="headerlink" href="#xdigibuffer" title="Permalink to this heading"></a></h1>
 <p>I/O multichannel (8x) digital buffer to match the impedance of external reference signals with the input impedance of the Xilinx® KC705 Evaluation kit</p>
 <ul class="simple">
@@ -103,16 +104,14 @@
 <p>The 8xDigiBuffer is a custom built circuital component used as signal level (voltage) and impedance matching device. It is used as front-end logic to adapt and buffer external signals to the LVTTL 50 Ohm requirements of the  Xilinx® KC705 Evaluation kit.</p>
 <p>The 8xDigiBuffer accomodates 8x inputs and it is capable of translating the input voltage levels into  LVTTL 50 Ohm in real-time.</p>
 <p>In the current application and implementation, the 8xDigiBuffer, is used to make the pixel, line and frame clocks in a suitable form to be read bythe Xilinx® KC705 Evaluation kit SMA ports (Fig. 1).</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/8xDigiBuffer_connections.PNG"><img alt="I/Os SMA-FMC connector Board" src="_images/8xDigiBuffer_connections.PNG" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Fig.1 - 8xDigiBuffer connections.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Fig.1 - 8xDigiBuffer connections.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>At the links in the table below all the needed information for building a 8xDigiBuffer:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
 <th class="head"><p>Where to get</p></th>
@@ -133,7 +132,7 @@
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 
 
            </div>

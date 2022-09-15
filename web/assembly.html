@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Assembly Instructions &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -77,20 +78,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="assembly-instructions">
+  <section class="tex2jax_ignore mathjax_ignore" id="assembly-instructions">
 <h1>Assembly Instructions<a class="headerlink" href="#assembly-instructions" title="Permalink to this heading"></a></h1>
 <p>The Xilinx® KC705 Evaluation board, the Cypress® FX3™ SuperSpeed Explorer Kit and the connector card can be easily stacked together, using FMC connectors, as shown below (Fig. 3). I/Os connections are also labeled for a more intuitive assembly and mapped in the <a class="reference internal" href="IOConnectorBoard.html"><span class="doc std std-doc">I/O pins table</span></a> which shows the correspondence between inputs (typically the digital output from the SPAD array detector elements, named photon chaneels) and the connection pins. For a correct use of the BrightEyes-TTM the <a class="reference external" href="https://en.wikipedia.org/wiki/DIP_switch">dip switches</a> in the orange BOX (always Fig.3) should be all set to the OFF position.</p>
 <p>The Cypress® FX3™ SuperSpeed Explorer Kit board interlock into the FMC-LPC connector block. While the I/Os connector cards is connected to the FMC-HPC connector.</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/TTM_Assembled.jpg"><img alt="Assembly" src="_images/TTM_Assembled.jpg" style="width: 3500px;" /></a>
-<p class="caption"><span class="caption-text">Fig.3 - BrightEyes-TTM detailed assembly.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Fig.3 - BrightEyes-TTM detailed assembly.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>In the current application the BrightEyes-TTM provides the duplication of the central channel.</p>
 <ul class="simple">
 <li><p>The single-ended inputs firmware, designed for the I/O SMA/B-to-FMC adapter board, the central channel (PX10 on SPAD-25ch, J37 on the adapter board) is duplicated on the J17 on the adapter board.</p></li>
 <li><p>The differential inputs firmware,  designed for the I/O 7x7SPAD-to-FMC adapter board, the central channel (PX24 on SPAD-49ch) is duplicated on the J9 on the adapter board.</p></li>
 </ul>
-</div>
+</section>
 
 
            </div>

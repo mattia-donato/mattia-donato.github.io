@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SPAD-FFS &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -77,7 +78,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="spad-ffs">
+  <section class="tex2jax_ignore mathjax_ignore" id="spad-ffs">
 <h1>SPAD-FFS<a class="headerlink" href="#spad-ffs" title="Permalink to this heading"></a></h1>
 <p>Pyhon code for the analysis of confocal laser-scanning microscopy based fluorescence fluctuation spectroscopy (FFS) data. The code is designed to analyze FFS data obtained with a 5x5 pixel SPAD array detector, instead of the typical point-detector. Includes code for:</p>
 <ul class="simple">
@@ -85,13 +86,13 @@
 <li><p>calculating autocorrelations and cross-correlations</p></li>
 <li><p>fitting the correlation curves with various fit models</p></li>
 </ul>
-<div class="section" id="how-do-i-use-it">
+<section id="how-do-i-use-it">
 <h2>How do I use it?<a class="headerlink" href="#how-do-i-use-it" title="Permalink to this heading"></a></h2>
 <p>Under Examples, a Jupyter notebook is available with an example. The raw data set used here is available on</p>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4161418"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.4161418.svg" /></a>
 <p>This data set contains the fluorescence intensity time traces for the 25 pixels for a freely diffusing antibody conjugated Alexa 488 dye. The time traces can be analyzed in various ways, such as spot-variation FCS, two-focus or pair-correlation FCS, and intensity mean-squared-displacement analysis.</p>
-</div>
-<div class="section" id="how-to-install">
+</section>
+<section id="how-to-install">
 <h2>How to install?<a class="headerlink" href="#how-to-install" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>If you are using python in anaconda (or conda)</p>
@@ -131,16 +132,16 @@ python setup.py install --user
 ```
 </pre></div>
 </div>
-</div>
-<div class="section" id="only-for-dev">
+</section>
+<section id="only-for-dev">
 <h2>Only for dev<a class="headerlink" href="#only-for-dev" title="Permalink to this heading"></a></h2>
 <p>If you are going to modify the library code directly into the folder where you extract it you can use the following command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">spad_ffs</span>
 <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">develop</span> <span class="o">--</span><span class="n">user</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FPGA architecture &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -79,13 +80,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="fpga-architecture">
+  <section class="tex2jax_ignore mathjax_ignore" id="fpga-architecture">
 <h1>FPGA architecture<a class="headerlink" href="#fpga-architecture" title="Permalink to this heading"></a></h1>
 <p>The BrightEyes-TTM implementation was conceived and designed having in mind the fluorescence applications thus providing a good compromise between cost, photon-timing precision and resolution, temporal range, electronics dead-time, maximum photon-flux. The low FPGA resource in the current implementation ensures the highly scalability of the architecture, potentially enabling more channels and, in general, new applications. We chose an FPGA approach to grant both quick prototyping and versatility, and to give the miscroscopy community the posibility of further modifing the TTM depending on future and always-evolving needs.</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/BrightEyesTTM_architecture.PNG"><img alt="BrightEyes TTM architecture" src="_images/BrightEyesTTM_architecture.PNG" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-text">Fig.2 - BrightEyes TTM architecture</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Fig.2 - BrightEyes TTM architecture</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>VHDL source code TTM architecture components:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/blob/v2.0/FPGA/ttm/hdl/input_filter.vhd">Hit filter</a> - The hit-filter component is engineered and deployed to shape the incoming photons and sync signal lengths based on the sampling FPGA clock period and, at the same time, for generating a toggle signal event (the photon or sync enable signal) for each detected photon or laser pulse event.</p></li>
@@ -108,7 +111,7 @@ The version v2.0 have two <code class="docutils literal notranslate"><span class
 </ul>
 </div>
 <p>The BrightEyes-TTM architecture (Fig.2) combines N+1 (N = 25 photon channels in this implementation) tapped delay lines (TDLs) and a coarse counter running at 240 MHz to obtain N fine TDCs with tens of picoseconds precision (for the start-stop time of each photon channel), and M coarse TDCs with a nanosecond precision (M = 3 reference channels in this implementation).</p>
-</div>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BrightEyes-TTM Mainboard &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -91,7 +92,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="brighteyes-ttm-mainboard">
+  <section class="tex2jax_ignore mathjax_ignore" id="brighteyes-ttm-mainboard">
 <h1>BrightEyes-TTM Mainboard<a class="headerlink" href="#brighteyes-ttm-mainboard" title="Permalink to this heading"></a></h1>
 <p><strong>(based on Kintex-7 evaluation board)</strong></p>
 <p>BrightEyes-TTM is based on a commercially available and low cost <a class="reference external" href="https://en.wikipedia.org/wiki/Field-programmable_gate_array">field-programmable-gate-array (FPGA)</a> evaluation Board (Fig.1), equipped with a state-of-the-art FPGA (the <a class="reference external" href="https://www.xilinx.com/products/silicon-devices/fpga/kintex-7.html">Kintex 7</a>, XC7K325T-2FFG900C) and a series of <span class="xref myst">I/Os connectors</span> granting an easy interface of the board with the laser scanning microscope controller, the detector(s) and the personal computer.</p>
@@ -103,11 +104,13 @@
 </ul>
 <p>The BrightEyes-TTM project has been designed, synthesed and implementated with the software Xilinx Vivado 2017.4 more info <a class="reference external" href="https://www.xilinx.com/products/design-tools/vivado.html">Xilinx Vivado Design Suite</a>. After having downloaded and installed <a class="reference external" href="https://www.xilinx.com/products/design-tools/vivado.html">Vivado Design Suite</a> (Xilinx FPGA Programming software environment) the Xilinx FPGA evaluation card can be directly programmed with a precompiled firmware available here below.
 The source code VHDL/Verilog is available on the GitHub repository <a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/tree/v2.0/FPGA/ttm/hdl">BrightEyes-TTM FPGA VHDL/Verilog code</a></p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/KC705_FPGA.png"><img alt="Xilinx FPGA Board" src="_images/KC705_FPGA.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-text">Fig.1 - Xilinx FPGA Board</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
-</div>
-<div class="section" id="brighteyes-ttm-firmware">
+<figcaption>
+<p><span class="caption-text">Fig.1 - Xilinx FPGA Board</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="brighteyes-ttm-firmware">
 <h2>BrightEyes-TTM Firmware<a class="headerlink" href="#brighteyes-ttm-firmware" title="Permalink to this heading"></a></h2>
 <p id="ttmfirmware">The current firmware (.bit files) ready to flash the Xilinx KC705 Kintex-7 Evaluation board are available here:</p>
 <ul class="simple">
@@ -119,8 +122,8 @@ The source code VHDL/Verilog is available on the GitHub repository <a class="ref
 <li><p><a class="reference external" href="https://github.com/VicidominiLab/BrightEyes-TTM/raw/v1.0/FPGA/ttm/project/ttm.runs/impl_1/top.bit">BrightEyes-TTM FPGA firmware</a>: 21 channels, single-ended inputs, old protocol (v.1.0)</p></li>
 </ul>
 <p>If you want modify the project or you want know more about the BrightEyes-TTM firmware design see the <a class="reference internal" href="architecture.html"><span class="doc std std-doc">BrightEyes-TTM FPGA architecture</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

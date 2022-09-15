@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Getting started &mdash; BrightEyes-TTM 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -93,13 +94,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
 <p>In this section you will find the hardware and software needed to build and run the BrightEyes-TTM.</p>
-<div class="section" id="microscope">
+<section id="microscope">
 <h2>Microscope<a class="headerlink" href="#microscope" title="Permalink to this heading"></a></h2>
 <p>The BrightEyes-TTM can be connected to commercial or custom imaging microscopes as long as they provide the following synchronization outputs:</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -122,15 +123,15 @@
 </table>
 <p>…and of course the detector signals.</p>
 <p>The FPGA synchronization inputs have LVTTL level so if you need to adapt the signal see “MPD NIM 2 TTL” and “8xDigiBuffer” in the Hardware list here below.</p>
-<div class="section" id="detector">
+<section id="detector">
 <h3>Detector<a class="headerlink" href="#detector" title="Permalink to this heading"></a></h3>
 <p>The BrightEyes-TTM channel inputs supports either LVTTL or LVDS level input signals. Depending from the type of signal you will need to use a specific firmware and a specific version of “I/O to FMC adapter board” in the Hardware list here below. This means that the BrightEyes-TTM can use as input channel PMT (+CFD) or APD, and of course SPAD array detectors. BrightEyes-TTM has been designed for SPAD prototype with 25 channel (LVTTL levels) and for commercial SPAD with 49 channel (LVDS levels).</p>
-</div>
-</div>
-<div class="section" id="hardware">
+</section>
+</section>
+<section id="hardware">
 <h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h2>
 <p>Here the list of the hardware requirments.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -164,11 +165,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="firmware">
+</section>
+<section id="firmware">
 <h2>Firmware<a class="headerlink" href="#firmware" title="Permalink to this heading"></a></h2>
 <p>Here the list of the firmwares needed to use the BrightEyes-TTM.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -183,16 +184,16 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="software">
+</section>
+<section id="software">
 <h2>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The software to acquire data and the script to analyze tham was developed is Linux native. Even if it should run in Windows 10 / 11 we strongly suggest to use it on a Linux distribution Debian derivate (Debian 11, Ubuntu 20.04 LTS, Linux Mint 20.3 etc…).</p>
 </div>
-<div class="section" id="data-acquisition">
+<section id="data-acquisition">
 <h3>Data Acquisition<a class="headerlink" href="#data-acquisition" title="Permalink to this heading"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -204,15 +205,15 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="data-analysis-libraries">
+</section>
+<section id="data-analysis-libraries">
 <h3>Data Analysis libraries<a class="headerlink" href="#data-analysis-libraries" title="Permalink to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">libttp</span></code> is needed in order to convert the raw data from the BrightEyes-TTM acquisition to a dataframe or a HDF5 file. The <code class="docutils literal notranslate"><span class="pre">spadffs</span></code> are needed instead for perform FCS analysis. More details here <a class="reference internal" href="dataprocessing.html"><span class="doc std std-doc">BrightEyes-TTM libraries</span></a>.</p>
-</div>
-<div class="section" id="data-processing-python-notebooks">
+</section>
+<section id="data-processing-python-notebooks">
 <h3>Data Processing (Python Notebooks)<a class="headerlink" href="#data-processing-python-notebooks" title="Permalink to this heading"></a></h3>
 <p>The data processing example are given here:</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -224,9 +225,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

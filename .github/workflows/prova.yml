@@ -27,13 +27,20 @@ jobs:
            git clone "https://github.com/VicidominiLab/BrightEyes-TTM.git" BrightEyes-TTM
            mkdir -p tmp/source           
            cp -vR BrightEyes-TTM/docs/source/* tmp/source
-    
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        pre-build-command: |
-                           pip install myst-parser[linkify] sphinx-rtd-theme
-        docs-folder: "tmp/source"
-        build-command: "sphinx-build -b html . _build"
+
+
+    - name: tree      
+      run: |
+           pip install sphinx myst-parser[linkify] sphinx-rtd-theme
+           cd tmp/source
+           sphinx-build -b html . _build
+           cd $HOME
+#     - uses: ammaraskar/sphinx-action@master
+#       with:
+#         pre-build-command: |
+#                            pip install myst-parser[linkify] sphinx-rtd-theme
+#         docs-folder: "tmp/source"
+#         build-command: "sphinx-build -b html . _build"
         
     - name: tree      
       run: |
